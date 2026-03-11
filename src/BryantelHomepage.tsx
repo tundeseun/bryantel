@@ -229,7 +229,7 @@ function Navbar() {
   const nav = [
     { label: "About Us", to: "/about" },
     { label: "Solutions", to: "/solutions", dropdown: true },
-    { label: "Industries", to: "/industries", dropdown: true },
+    // { label: "Industries", to: "/industries", dropdown: true },
     { label: "Products", to: "/products", dropdown: true },
     { label: "Contact", to: "/contact" },
   ];
