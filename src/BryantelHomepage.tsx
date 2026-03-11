@@ -24,6 +24,10 @@ import aboutImage from "./assets/about-bryantel.png";
 import amsImage from "./assets/ams-product.png";
 import creditImage from "./assets/credit-plus.png";
 import monitoringImage from "./assets/monitoring-system.png";
+import certificationImage from "./assets/certification.jpg";
+import gsaSealImage from "./assets/compliance.jpg";
+import gsaLogoImage from "./assets/compliance_2.jpg";
+// import igaLogoImage from "./assets/compliance_2.jpeg";
 
 type Slide = {
   id: number;
@@ -643,6 +647,112 @@ function LinkCardsSection() {
   );
 }
 
+
+function CertificationsSection() {
+  const certifications = [
+    {
+      name: "ISO 27001 Certified",
+      image: certificationImage,
+      alt: "ISO 27001 Certified badge",
+    },
+    {
+      name: "Gaming Laboratories International",
+      image: gsaSealImage,
+      alt: "Gaming Laboratories International certification",
+    },
+    // {
+    //   name: "International Gaming Standards Association",
+    //   image: igaLogoImage,
+    //   alt: "International Gaming Standards Association logo",
+    // },
+    {
+      name: "GSA Compliance",
+      image: gsaLogoImage,
+      alt: "GSA compliance logo",
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff,#eef3fb,#f8fbff)] py-20 lg:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.10),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.08),_transparent_24%)]" />
+      <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(37,99,235,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.04)_1px,transparent_1px)] [background-size:88px_88px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+        <SectionIntro
+          title="Certifications & Compliance"
+          subtitle="Our technology and operations are aligned with internationally recognized standards, regulatory expectations, and industry compliance frameworks."
+        />
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mx-auto mb-12 max-w-5xl rounded-[2rem] border border-blue-100 bg-white/80 p-8 text-center shadow-[0_28px_80px_-38px_rgba(15,23,42,0.28)] backdrop-blur-sm lg:p-10"
+        >
+          <p className="text-lg leading-9 text-slate-700 lg:text-[1.2rem]">
+            Bryantel maintains a strong commitment to security, interoperability, and gaming technology standards.
+          </p>
+
+          <p className="mt-5 text-base italic leading-8 text-amber-700 lg:text-lg">
+            Bryantel is a silver member of GSA with access to G2S v3.0.
+          </p>
+        </motion.div>
+
+        <motion.div
+  variants={stagger}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.16 }}
+  className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3"
+>
+  {certifications.map((item, index) => (
+    <motion.div
+      key={item.name}
+      variants={fadeUp}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay: index * 0.08 }}
+      whileHover={{ y: -8, scale: 1.015 }}
+      className="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-5 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.28)] transition"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.08),_transparent_30%),radial-gradient(circle_at_bottom_left,_rgba(245,158,11,0.07),_transparent_26%)]" />
+
+      <div className="relative">
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: index * 0.35,
+          }}
+          className="flex h-56 items-center justify-center overflow-hidden rounded-[1.5rem] border border-slate-100 bg-[linear-gradient(180deg,#f8fafc,#eef4fb)] p-4"
+        >
+          <img
+            src={item.image}
+            alt={item.alt}
+            className="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+
+        <div className="mt-5 text-center">
+          {/* <div className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-700">
+            Compliance
+          </div> */}
+          <h3 className="mt-3 text-lg font-bold leading-7 text-slate-900">
+            {item.name}
+          </h3>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[linear-gradient(180deg,#061338,#040d26)] text-slate-200">
@@ -652,10 +762,17 @@ function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 py-5 lg:px-8">
         <div className="grid gap-4 md:grid-cols-[1.1fr_0.7fr_0.8fr_0.95fr] md:items-start">
           <div>
-            <div className="rounded-xl bg-white/5 px-3 py-2 backdrop-blur-sm inline-block">
-              <img src={logoPath} alt="Bryantel Ltd." className="h-10 w-auto object-contain brightness-125 contrast-125" />
+            <div className="inline-flex rounded-2xl border border-white/15 bg-gradient-to-br from-[#0f2a6b] via-[#163b8c] to-[#f0f6ff] p-[1px] shadow-[0_14px_40px_-18px_rgba(0,0,0,0.55)]">
+              <div className="rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(223,236,255,0.96),rgba(184,212,255,0.92))] px-4 py-3 backdrop-blur-sm">
+                <img
+                  src={logoPath}
+                  alt="Bryantel Ltd."
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
             </div>
-            <p className="mt-2 max-w-sm text-xs leading-6 text-slate-300/85">
+
+            <p className="mt-3 max-w-sm text-xs leading-6 text-slate-300/85">
               Enterprise technology and digital products built for innovation across the Middle East and Africa.
             </p>
           </div>
@@ -707,7 +824,6 @@ function Footer() {
     </footer>
   );
 }
-
 export default function BryantelHomepage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -717,6 +833,7 @@ export default function BryantelHomepage() {
       <AboutSection />
       <ProductsSection />
       <OfferingsSection />
+      <CertificationsSection />
       <LinkCardsSection />
       <Footer />
     </div>
