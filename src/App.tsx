@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BryantelHomepage from "./BryantelHomepage";
 import AboutUsPage from "./AboutUsPage";
 import ProductPage from "./ProductPage";
+import ContactPage from "./ContactPage";
 
 function SolutionsPage() {
   return <div className="p-10 text-2xl">Solutions Page</div>;
@@ -19,9 +20,9 @@ function WhyBryantelPage() {
   return <div className="p-10 text-2xl">Why Bryantel Page</div>;
 }
 
-function ContactPage() {
-  return <div className="p-10 text-2xl">Contact Page</div>;
-}
+// function ContactPage() {
+//   return <div className="p-10 text-2xl">Contact Page</div>;
+// }
 
 export default function App() {
   return (
