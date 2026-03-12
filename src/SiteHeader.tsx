@@ -85,7 +85,7 @@ export function Navbar() {
    { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
     // { label: "Solutions", to: "/solutions", dropdown: true },
-    { label: "Products", to: "/products", dropdown: true },
+    { label: "Products", to: "/products", dropdown: false },
     { label: "Contact", to: "/contact" },
   ];
 
