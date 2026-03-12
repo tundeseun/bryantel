@@ -18,7 +18,7 @@ import {
   Network,
   PlaySquare,
   MessageSquareText,
-  Lock,
+  // Lock,
   Users,
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
@@ -36,55 +36,14 @@ type ProductItem = {
   image: string;
   accent: string;
   features: string[];
-  featured?: boolean;
 };
-
-const amsFeatures = [
-  "Reports and Data Analysis",
-  "Dispute Handling for Stakers",
-  "Save OPEX and Resources",
-  "Automatic Tax Collection",
-  "Screen to Manage Lottery Operators",
-  "Lottery License Management",
-  "Centralized Monitoring System",
-  "360 degree View of Lottery Operation",
-  "Underage Gambling Detection",
-  "Addicted Gambling Detection",
-  "Anti-Money Laundering (AML) Detection",
-];
-
-const creditAdvantages = [
-  "Advance in the form of Airtime, Data, Bundle Packs or VAS",
-  "Eligibility scoring based on subscriber transaction history and behaviour",
-  "Customer segmentation for single or multiple advances",
-  "Different denominations configurable by the MNO and partner",
-  "Push and pull channels supported",
-  "Gamification support to improve loyalty and service uptake",
-];
-
-const creditChannels = [
-  { label: "USSD", icon: Radio },
-  { label: "SMS", icon: Smartphone },
-  { label: "Web App", icon: Globe },
-  { label: "Mobile App", icon: CreditCard },
-  { label: "Multi-Channel", icon: MonitorSmartphone },
-];
-
-const creditSteps = [
-  "Subscriber runs out of balance such as airtime, data, bundles, or VAS.",
-  "Subscriber requests an advance through USSD, SMS, web app, mobile app, or other supported channels.",
-  "System evaluates subscriber eligibility and determines the qualified amount.",
-  "Approved advance is credited into the relevant subscriber wallet or service account.",
-  "Subscriber consumes the advance based on the approved package or denomination.",
-  "Upon next recharge, the advanced value is automatically recovered until full repayment is completed.",
-];
 
 const allProducts: ProductItem[] = [
   {
     title: "Advanced Monitoring System",
     shortTitle: "AMS",
     description:
-      "A gaming industry monitoring platform providing real-time analytics, regulatory visibility, compliance oversight, and full operational control across lottery and gaming ecosystems.",
+      "A gaming industry monitoring platform that provides real-time analytics, compliance oversight, regulatory visibility, and operational control across lottery and gaming ecosystems.",
     icon: BarChart3,
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
@@ -94,6 +53,22 @@ const allProducts: ProductItem[] = [
       "Lottery license management",
       "AML detection",
       "Underage gambling detection",
+    ],
+  },
+  {
+    title: "Credit+",
+    shortTitle: "Credit+",
+    description:
+      "A subscriber lending solution that enables airtime, data, bundle, and VAS advances with automated recovery, eligibility scoring, segmentation, and multi-channel access.",
+    icon: Wallet,
+    image: creditImage,
+    accent: "from-indigo-500/25 to-blue-400/10",
+    features: [
+      "Airtime and data advances",
+      "Eligibility scoring",
+      "Customer segmentation",
+      "Multi-channel access",
+      "Automated repayment",
     ],
   },
   {
@@ -193,22 +168,6 @@ const allProducts: ProductItem[] = [
     ],
   },
   {
-    title: "Credit+",
-    shortTitle: "Credit+",
-    description:
-      "A subscriber lending solution that enables airtime, data, bundle, and VAS advances with automated recovery, scoring, segmentation, and multi-channel access.",
-    icon: Wallet,
-    image: creditImage,
-    accent: "from-indigo-500/25 to-blue-400/10",
-    features: [
-      "Airtime and data advances",
-      "Eligibility scoring",
-      "Customer segmentation",
-      "Multi-channel access",
-      "Automated repayment",
-    ],
-  },
-  {
     title: "MVNO Services",
     shortTitle: "MVNO",
     description:
@@ -239,7 +198,6 @@ const allProducts: ProductItem[] = [
       "Parental lock",
       "Recommendation engine",
     ],
-    featured: true,
   },
 ];
 
@@ -274,33 +232,17 @@ function ProductCard({
   title,
   shortTitle,
   description,
+  image,
   icon: Icon,
   features,
   accent,
-  featured = false,
-}: {
-  title: string;
-  shortTitle: string;
-  description: string;
-  icon: React.ElementType;
-  features: string[];
-  accent: string;
-  featured?: boolean;
-}) {
+}: ProductItem) {
   return (
-    <div
-      className={`group relative overflow-hidden rounded-[28px] border border-white/15 bg-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-white/25 hover:bg-white/[0.12] ${
-        featured
-          ? "md:col-span-2 xl:col-span-2 mx-auto w-full xl:max-w-5xl"
-          : ""
-      }`}
-    >
-      <div
-        className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-70`}
-      />
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-white/25 hover:bg-white/[0.12]">
+      <div className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-70`} />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px]" />
 
-      <div className={`relative p-6 md:p-7 ${featured ? "xl:p-8" : ""}`}>
+      <div className="relative flex h-full flex-col p-6 md:p-7">
         <div className="flex items-start justify-between gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-white shadow-lg">
             <Icon size={26} />
@@ -311,28 +253,28 @@ function ProductCard({
           </div>
         </div>
 
-        <div
-          className={
-            featured
-              ? "mt-6 grid gap-6 xl:grid-cols-[1.1fr,0.9fr] xl:items-center"
-              : "mt-6"
-          }
-        >
-          <div className={featured ? "xl:flex xl:min-h-full xl:flex-col xl:justify-center" : ""}>
-            <h3 className="text-2xl font-semibold leading-tight text-white md:text-[30px]">
-              {title}
-            </h3>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <img
+            src={image}
+            alt={title}
+            className="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-200 md:text-base">
-              {description}
-            </p>
-          </div>
+        <div className="mt-6 flex flex-1 flex-col">
+          <h3 className="min-h-[64px] text-2xl font-semibold leading-tight text-white">
+            {title}
+          </h3>
 
-          <div className={`grid gap-3 ${featured ? "sm:grid-cols-2 xl:grid-cols-1" : ""}`}>
-            {features.map((feature) => (
+          <p className="mt-4 min-h-[140px] text-sm leading-7 text-slate-200 md:text-base">
+            {description}
+          </p>
+
+          <div className="mt-6 grid gap-3">
+            {features.slice(0, 5).map((feature) => (
               <div
                 key={feature}
-                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/10 px-4 py-3"
+                className="flex min-h-[60px] items-start gap-3 rounded-xl border border-white/10 bg-white/10 px-4 py-3"
               >
                 <CheckCircle2
                   size={18}
@@ -344,56 +286,34 @@ function ProductCard({
               </div>
             ))}
           </div>
+
+          <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-white">
+            Learn More
+            <ArrowRight size={15} />
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function InfoMiniCard({
+function CapabilityCard({
   icon: Icon,
   title,
   text,
-  dark = true,
 }: {
   icon: React.ElementType;
   title: string;
   text: string;
-  dark?: boolean;
 }) {
   return (
-    <div
-      className={`rounded-2xl border p-4 ${
-        dark
-          ? "border-white/10 bg-white/5"
-          : "border-slate-200/60 bg-white/60"
-      }`}
-    >
-      <div
-        className={`mb-3 flex h-11 w-11 items-center justify-center rounded-full ${
-          dark
-            ? "bg-blue-500/20 text-blue-300"
-            : "bg-[#28459b]/10 text-[#28459b]"
-        }`}
-      >
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-300">
         <Icon size={22} />
       </div>
 
-      <h3
-        className={`text-lg font-semibold ${
-          dark ? "text-white" : "text-[#18275d]"
-        }`}
-      >
-        {title}
-      </h3>
-
-      <p
-        className={`mt-2 text-sm leading-6 ${
-          dark ? "text-slate-300" : "text-slate-700"
-        }`}
-      >
-        {text}
-      </p>
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-sm leading-7 text-slate-300">{text}</p>
     </div>
   );
 }
@@ -411,152 +331,115 @@ export default function ProductPage() {
         <section className="relative border-b border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8 lg:py-24">
             <SectionHeading
-              title="Our Products & Enterprise Solutions"
-              subtitle="Explore Bryantel’s portfolio of digital platforms, telecom services, AI-powered products, and regulatory technology solutions."
+              title="Bryantel Products & Solutions"
+              subtitle="Enterprise platforms designed for telecom operators, regulators, and digital service providers."
             />
 
-            <div className="mt-14 grid gap-8 lg:grid-cols-2">
-              <div className="overflow-hidden rounded-[28px] border border-white/20 bg-[linear-gradient(180deg,rgba(13,28,78,0.86),rgba(7,14,40,0.78))] shadow-[0_25px_80px_rgba(0,0,0,0.35)] backdrop-blur-md">
-                <div className="grid gap-6 p-6 md:p-8">
-                  <div className="grid gap-6 md:grid-cols-[1fr,1.15fr] md:items-start">
-                    <div>
-                      <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
-                        Advanced
-                        <br />
-                        Monitoring
-                        <br />
-                        System <span className="text-slate-300">(AMS)</span>
-                      </h1>
-                    </div>
+            <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              <CapabilityCard
+                icon={ShieldCheck}
+                title="Regulatory Technology"
+                text="Solutions that improve compliance, oversight, auditability, and operational transparency."
+              />
+              <CapabilityCard
+                icon={CreditCard}
+                title="Digital Finance"
+                text="Subscriber and operator-focused platforms for credit, value-added services, and monetization."
+              />
+              <CapabilityCard
+                icon={MonitorSmartphone}
+                title="Telecom Platforms"
+                text="Robust service delivery systems built for digital channels, subscriber engagement, and scale."
+              />
+              <CapabilityCard
+                icon={Users}
+                title="Enterprise Delivery"
+                text="Enterprise-grade solutions tailored for operators, regulators, and digital service providers."
+              />
+            </div>
+          </div>
+        </section>
 
-                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                      <img
-                        src={amsImage}
-                        alt="Advanced Monitoring System"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
+        <section className="relative border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr">
+              {allProducts.map((product) => (
+                <ProductCard key={product.title} {...product} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative border-b border-white/10">
+          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
+            <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[linear-gradient(180deg,rgba(12,24,72,0.75),rgba(7,14,40,0.75))] p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:p-10">
+              <div className="grid gap-10 lg:grid-cols-2">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-200">
+                    <Radio size={14} />
+                    Credit+ Channels
                   </div>
 
-                  <div>
-                    <h2 className="text-2xl font-semibold text-white md:text-3xl">
-                      Advanced Monitoring System (AMS)
-                    </h2>
+                  <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+                    Multi-Channel Access for Subscriber Credit Services
+                  </h2>
 
-                    <p className="mt-4 text-base leading-8 text-slate-200 md:text-lg">
-                      AMS is a gaming industry monitoring platform that provides{" "}
-                      <span className="font-semibold text-amber-300">
-                        real-time analytics
-                      </span>{" "}
-                      and supports the regulation of gaming activities. It gives
-                      regulators a 360-degree view of operators’ sales and
-                      players’ activities.
-                    </p>
+                  <p className="mt-4 text-base leading-8 text-slate-200 md:text-lg">
+                    Credit+ supports flexible access points that make borrowing
+                    easy for subscribers while giving operators better control
+                    over service delivery and repayment.
+                  </p>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                      <InfoMiniCard
-                        icon={BarChart3}
-                        title="Real-Time Analytics"
-                        text="Track operator performance, player activities, and reports across the gaming ecosystem with live operational visibility."
-                      />
-                      <InfoMiniCard
-                        icon={ShieldCheck}
-                        title="Compliance & Protection"
-                        text="Support safer gaming through AML detection, underage gambling detection, dispute handling, and regulatory oversight."
-                      />
-                    </div>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {[
+                      { label: "USSD", icon: Radio },
+                      { label: "SMS", icon: Smartphone },
+                      { label: "Web App", icon: Globe },
+                      { label: "Mobile App", icon: CreditCard },
+                      { label: "Multi-Channel", icon: MonitorSmartphone },
+                    ].map((channel) => {
+                      const Icon = channel.icon;
 
-                    <ul className="mt-8 grid gap-3 text-sm text-slate-200 md:grid-cols-2 md:text-base">
-                      {amsFeatures.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3">
-                          <CheckCircle2
-                            size={18}
-                            className="mt-1 shrink-0 text-blue-300"
-                          />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      return (
+                        <div
+                          key={channel.label}
+                          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100"
+                        >
+                          <Icon size={16} />
+                          <span>{channel.label}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              </div>
 
-              <div className="overflow-hidden rounded-[28px] border border-white/20 bg-[linear-gradient(180deg,rgba(250,252,255,0.84),rgba(229,238,255,0.72))] shadow-[0_25px_80px_rgba(0,0,0,0.28)] backdrop-blur-md">
-                <div className="grid gap-6 p-6 md:p-8">
-                  <div className="grid gap-6 md:grid-cols-[1fr,0.95fr] md:items-start">
-                    <div>
-                      <h1 className="text-4xl font-semibold leading-tight text-[#18275d] md:text-5xl">
-                        Credit<span className="text-amber-500">+</span>
-                      </h1>
+                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+                  <h3 className="text-2xl font-semibold text-white">
+                    Credit+ Core Advantages
+                  </h3>
 
-                      <p className="mt-5 text-base leading-8 text-slate-700 md:text-lg">
-                        Credit+ allows subscribers to borrow airtime, data
-                        bundles, and other value-added services based on their
-                        behaviour and network activity, with automated recovery
-                        on subsequent recharges.
-                      </p>
-                    </div>
-
-                    <div className="overflow-hidden rounded-2xl border border-slate-200/60 bg-white/50">
-                      <img
-                        src={creditImage}
-                        alt="Credit+"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <h2 className="text-2xl font-semibold text-[#18275d]">
-                      Available Channels
-                    </h2>
-
-                    <div className="mt-4 flex flex-wrap gap-3">
-                      {creditChannels.map((channel) => {
-                        const Icon = channel.icon;
-
-                        return (
-                          <div
-                            key={channel.label}
-                            className="inline-flex items-center gap-2 rounded-full border border-[#28459b]/20 bg-white/70 px-4 py-2 text-sm font-medium text-[#28459b] shadow-sm"
-                          >
-                            <Icon size={16} />
-                            <span>{channel.label}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <h2 className="mt-8 text-2xl font-semibold text-[#18275d]">
-                      Core Advantages
-                    </h2>
-
-                    <ul className="mt-5 space-y-3 text-sm text-slate-700 md:text-base">
-                      {creditAdvantages.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <CheckCircle2
-                            size={18}
-                            className="mt-1 shrink-0 text-[#28459b]"
-                          />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                      <InfoMiniCard
-                        icon={Users}
-                        title="Segmentation"
-                        text="Score subscribers for eligibility and support single or multiple advances based on customer behaviour."
-                        dark={false}
-                      />
-                      <InfoMiniCard
-                        icon={Lock}
-                        title="Recovery Control"
-                        text="Recover borrowed value on recharge while supporting configurable products, channels, and denomination options."
-                        dark={false}
-                      />
-                    </div>
+                  <div className="mt-6 grid gap-3">
+                    {[
+                      "Advance in the form of Airtime, Data, Bundle Packs or VAS",
+                      "Eligibility scoring based on subscriber transaction history and behaviour",
+                      "Customer segmentation for single or multiple advances",
+                      "Different denominations configurable by the MNO and partner",
+                      "Push and pull channels supported",
+                      "Gamification support to improve loyalty and service uptake",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                      >
+                        <CheckCircle2
+                          size={18}
+                          className="mt-0.5 shrink-0 text-emerald-300"
+                        />
+                        <span className="text-sm leading-6 text-slate-200">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -572,13 +455,20 @@ export default function ProductPage() {
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-200 md:text-lg">
                 A guided advance and repayment experience that helps subscribers
-                stay connected while giving operators clear control over
-                qualification, disbursement, and recovery.
+                stay connected while giving operators control over qualification,
+                disbursement, and recovery.
               </p>
             </div>
 
             <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {creditSteps.map((step, index) => (
+              {[
+                "Subscriber runs out of balance such as airtime, data, bundles, or VAS.",
+                "Subscriber requests an advance through USSD, SMS, web app, mobile app, or other supported channels.",
+                "System evaluates subscriber eligibility and determines the qualified amount.",
+                "Approved advance is credited into the relevant subscriber wallet or service account.",
+                "Subscriber consumes the advance based on the approved package or denomination.",
+                "Upon next recharge, the advanced value is automatically recovered until full repayment is completed.",
+              ].map((step, index) => (
                 <div
                   key={step}
                   className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-md"
@@ -596,30 +486,6 @@ export default function ProductPage() {
           </div>
         </section>
 
-        <section className="relative">
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
-            <SectionHeading
-              title="All Bryantel Services & Products"
-              subtitle="A complete showcase of our telecom, AI, monitoring, data, messaging, streaming, and regulatory technology offerings."
-            />
-
-            <div className="mt-12 grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {allProducts.map((product) => (
-                <ProductCard
-                  key={product.title}
-                  title={product.title}
-                  shortTitle={product.shortTitle}
-                  description={product.description}
-                  icon={product.icon}
-                  features={product.features}
-                  accent={product.accent}
-                  featured={product.featured}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="relative border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
             <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[linear-gradient(135deg,rgba(21,39,95,0.92),rgba(8,15,40,0.92))] p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:p-10">
@@ -631,9 +497,9 @@ export default function ProductPage() {
                   <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200 md:text-lg">
                     From gaming regulation and messaging infrastructure to MVNO
                     enablement, AI services, device identity management, and
-                    digital streaming platforms, Bryantel delivers robust
-                    enterprise-grade solutions tailored for operators,
-                    regulators, and modern digital businesses.
+                    digital streaming platforms, Bryantel delivers enterprise
+                    solutions tailored for operators, regulators, and modern
+                    digital businesses.
                   </p>
                 </div>
 
