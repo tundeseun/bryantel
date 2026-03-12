@@ -1,13 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BryantelHomepage from "./BryantelHomepage";
 import AboutUsPage from "./AboutUsPage";
+import ProductPage from "./ProductPage";
 
 function SolutionsPage() {
   return <div className="p-10 text-2xl">Solutions Page</div>;
-}
-
-function ProductsPage() {
-  return <div className="p-10 text-2xl">Products Page</div>;
 }
 
 function AmsPage() {
@@ -33,7 +30,7 @@ export default function App() {
         <Route path="/" element={<BryantelHomepage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/solutions" element={<SolutionsPage />} />
-        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/products/ams" element={<AmsPage />} />
         <Route path="/products/credit-plus" element={<CreditPlusPage />} />
         <Route path="/why-bryantel" element={<WhyBryantelPage />} />
