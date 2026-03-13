@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -6,9 +6,7 @@ import {
   CreditCard,
   Globe,
   MonitorSmartphone,
-  Radio,
   ShieldCheck,
-  Smartphone,
   BellRing,
   Bot,
   PhoneCall,
@@ -18,8 +16,8 @@ import {
   Network,
   PlaySquare,
   MessageSquareText,
-  // Lock,
   Users,
+  X,
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
@@ -43,160 +41,190 @@ const allProducts: ProductItem[] = [
     title: "Advanced Monitoring System",
     shortTitle: "AMS",
     description:
-      "A gaming industry monitoring platform that provides real-time analytics, compliance oversight, regulatory visibility, and operational control across lottery and gaming ecosystems.",
+      "AMS is a gaming industry monitoring platform that provides real time analytic solution based on big data and supports the regulation of gaming activities, AMS provides regulators 360-degree view of gaming operator sales and players’ activities",
     icon: BarChart3,
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
     features: [
-      "Real-time analytics",
-      "Automatic tax collection",
-      "Lottery license management",
-      "AML detection",
-      "Underage gambling detection",
+      "Reports and Data Analysis",
+      "Dispute Handling for Stakers",
+      "Save OPEX and Resources",
+      "Automatic Tax Collection",
+      "Screen to Manage Lottery Operators",
+      "Lottery License Management",
+      "Centralized Monitoring System",
+      "360 degree View of Lottery Operation",
+      "Underage Gambling Detection",
+      "Addicted Gambling Detection",
+      "Anti-Money Laundering (AML) Detection",
     ],
   },
   {
-    title: "Credit+",
-    shortTitle: "Credit+",
-    description:
-      "A subscriber lending solution that enables airtime, data, bundle, and VAS advances with automated recovery, eligibility scoring, segmentation, and multi-channel access.",
-    icon: Wallet,
-    image: creditImage,
-    accent: "from-indigo-500/25 to-blue-400/10",
-    features: [
-      "Airtime and data advances",
-      "Eligibility scoring",
-      "Customer segmentation",
-      "Multi-channel access",
-      "Automated repayment",
-    ],
-  },
-  {
-    title: "VAS Aggregator Platform",
+    title: "VAS Aggregator Platform (VAP)",
     shortTitle: "VAP",
     description:
-      "A centralized VAS concentration point that reduces direct operator integrations and supports end-to-end service creation, operation, and execution for content and partner ecosystems.",
+      "VAP primarily provide a concentration point to limit the number of devices that will be directly connected to the operators. It eliminate the need for a Content Service Provider to maintain multiple system integration to each network operator. VAP support E2E process of service creation, operation and execution of VAS services, VAP works with CSP to ensure QTM in service delivery.",
     icon: Network,
     image: monitoringImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
     features: [
-      "Service management",
-      "User management",
-      "Partner management",
-      "SMS / MMS / USSD / APP channels",
-      "Direct carrier billing",
+      "Service Management",
+      "User Management",
+      "Partner Management",
+      "Access Channels (SMS/MMS/USSD/APP)",
+      "Access Code Management",
+      "Direct Carrier Billing",
     ],
   },
   {
     title: "Messaging",
     shortTitle: "Messaging",
     description:
-      "Premium bulk SMS, MMS, voice, and USSD service delivery backed by trusted APIs, reliable throughput, and responsive 24/7 enterprise support.",
+      "We offer premium bulk SMS, MMS, voice and USSD services. Enjoy exceptional 24/7 support and send and receive messages with i-Cell’s trusted APIs",
     icon: MessageSquareText,
     image: monitoringImage,
     accent: "from-sky-500/25 to-blue-400/10",
     features: [
-      "Bulk SMS",
+      "Premium bulk SMS",
       "MMS services",
       "Voice services",
       "USSD services",
-      "Trusted API integration",
+      "Exceptional 24/7 support",
+      "Trusted APIs",
     ],
   },
   {
     title: "AI Companion",
     shortTitle: "AI",
     description:
-      "An out-of-the-box AI service for MNO self-care apps that delivers smart recommendations, contextual support, and enhanced user engagement with easy deployment.",
+      "AI Companion is an out-of-the-box service for MNOs, designed to enhance telco self-care mobile apps with AI capabilities. Easy to integrate and deploy, this service instantly provides smart, contextual recommendations tailored to each user. Join us in transforming MNO apps into a powerful tool for revenue boost",
     icon: Bot,
     image: monitoringImage,
     accent: "from-emerald-500/25 to-teal-400/10",
     features: [
-      "Easy integration",
-      "Contextual recommendations",
-      "Self-care app enhancement",
-      "Revenue boost support",
-      "Fast deployment",
+      "Out-of-the-box service for MNOs",
+      "Enhance telco self-care mobile apps with AI capabilities",
+      "Easy to integrate and deploy",
+      "Smart, contextual recommendations tailored to each user",
+      "Transforming MNO apps into a powerful tool for revenue boost",
     ],
   },
   {
     title: "AI Caller ID",
     shortTitle: "Caller ID",
     description:
-      "A privacy-first caller identity service for MNOs that predicts caller identity in real time and helps classify business, spam, personal, prepaid, and landline numbers.",
+      "Our Caller ID is an Add-on Core Service for MNOs with the following capabilities :",
     icon: PhoneCall,
     image: monitoringImage,
     accent: "from-amber-500/25 to-orange-400/10",
     features: [
-      "Identifies local phone numbers",
-      "Spam and business detection",
-      "GDPR-friendly approach",
-      "Real-time caller prediction",
-      "Multi-source identity intelligence",
+      "Instantly identifies almost all local phone numbers",
+      "Regardless of network & type: personal, business, spam, mobile, landline, postpaid, prepaid...",
+      "Original privacy-first GDPR friendly solution. Creates real-time prediction about caller identity",
+      "Combines dozens of sources instantly to create best-guess caller ID tag",
     ],
   },
   {
-    title: "Equipment Identity Register",
+    title: "Equipment Identity Register (EIR)",
     shortTitle: "EIR",
     description:
-      "A robust IMEI registry solution that permits only authorized devices on GSM networks, blocks illegal or stolen devices, and provides powerful fraud and audit capabilities.",
+      "The EIR registers IMEI numbers of all mobile devices, such as mobile phones, smart phones, hand-held computers, tablet PC's, modems, POS machines etc, which use national GSM networks for their electronic communications. The System only permits electronic communications to those mobile devices which are registered, and have no legal obstacles for their usage in the country. IMEI Registry System blocks electronic communications of unregistered, stolen, lost mobile devices and provides tracking of illegal activities. The Equipment Identity Register (EIR) provides a direct interface to the IMEI DB.",
     icon: Cpu,
     image: monitoringImage,
     accent: "from-rose-500/25 to-red-400/10",
     features: [
-      "IMEI status query",
-      "Blacklist and bulk upload",
-      "Bulk IMEI deletion",
-      "Fraud analysis tool",
-      "Audit and alarm logs",
+      "Manage EIR Equipment Lists",
+      "Query an IMEI's Status",
+      "Bulk Transfer Equipment List Data between EIR and local files. For example, FTP a new blacklist file from a fraud agency and use the EIR GUI to upload it to EIR",
+      "Support for Bulk Deletion of IMEIs; to safely and efficiently process large numbers of IMEIs",
+      "Run Tests on EIR Equipment Lists",
+      "IMEI Database Management: configure and control the behavior of the EIR with the central GSM Association’s IMEI database.",
+      "Cloned Handset User Management: manage situations where cloned handsets must be transitioned progressively via an override feature.",
+      "MSIDSN to IMEI Search Feature: easily locate an IMEI using only the phone number (MSISDN) to add to a black list.",
+      "Fraud Analysis Tool: create reports on the multiple uses of an IMEI or IMSI with multiple IMSIs or IMEIs.",
+      "Audit and Alarm Log Display: search and view logs files produced on the EIR node(s).",
+      "User Account Levels: to insure critical information is available only to authorized users.",
     ],
   },
   {
     title: "Big Data",
     shortTitle: "Big Data",
     description:
-      "An enterprise-wide data solution that gathers and structures information from telco network elements, CRM, and charging systems to deliver intelligent reporting and mobility analytics.",
+      "We have established an enterprise-wide big data solution that can Gather data directly from telco network element CRM and charging platform etc. Our solution can work with or without pre-processed data and also structure data to provide intelligent reporting. The CDR extracted from the telco will be structure by our report system to provide mobility-related statistics, such as migration, commuting, urbanization and tourism. Our system can distinguish between high resolution data, such as signaling data, and call detail records (CDR).",
     icon: Database,
     image: monitoringImage,
     accent: "from-cyan-500/25 to-sky-400/10",
     features: [
-      "Data gathering from telco systems",
-      "Works with raw or processed data",
-      "Intelligent reporting",
-      "Mobility analytics",
-      "CDR and signaling data support",
+      "Gather data directly from telco network element CRM and charging platform etc.",
+      "Can work with or without pre-processed data",
+      "Structure data to provide intelligent reporting",
+      "Provide mobility-related statistics, such as migration, commuting, urbanization and tourism",
+      "Distinguish between high resolution data, such as signaling data, and call detail records (CDR)",
+    ],
+  },
+  {
+    title: "Credit+",
+    shortTitle: "Credit+",
+    description:
+      "Is a service that allows subscribers borrow airtime and data bundles based on their activities on the network. Subscribers pay back the borrowed airtime/data upon their next recharge(s) until the full loan amount is recouped.",
+    icon: Wallet,
+    image: creditImage,
+    accent: "from-indigo-500/25 to-blue-400/10",
+    features: [
+      "Advance in form of Airtime, Data, Bundle Packs or VAS",
+      "Every Subscriber is scored for credit eligibility based on historical transaction on the network and behaviour on the service",
+      "Customer segmentation enabling us to give single or multiple advances to a subscriber based on eligibility score",
+      "The Advance is offered in different denominations determined by the MNO and Partner",
+      "Multiple loan types supported: Airtime",
+      "Multiple loan types supported: Data",
+      "Multiple loan types supported: Mobile money",
+      "Multiple loan types supported: Value-added-services",
+      "Multiple channels supported: USSD, SMS, Web App, Mobile App;",
+      "Multi-lingual capabilities.",
+      "Push and pull channels both supported—customer can subscribe for automatic loan once their balance reaches a defined threshold (feature relies on OCS threshold monitoring capabilities).",
+      "Gamification support (points-based) to drive customer loyalty and service uptake.",
     ],
   },
   {
     title: "MVNO Services",
     shortTitle: "MVNO",
     description:
-      "End-to-end MVNO enablement services covering consulting, service management, technical platform support, and billing and loyalty operations for virtual operators.",
+      "We are MVNO enabler and we provide the following MVNO services",
     icon: Globe,
     image: monitoringImage,
     accent: "from-purple-500/25 to-indigo-400/10",
     features: [
-      "Consulting",
-      "Service management",
-      "Technology enablement",
-      "Billing management",
-      "Loyalty management",
+      "Consulting : We are prepared to share our experience with you, and offer consulting in finding the best market approach and optimal technical solution",
+      "Service Management: We operate and maintain enabling technology for host network operators and virtual operators",
+      "Technology: We use working blueprints for cost-effective platform solutions, leveraging our carrier-grade portfolio of network and IT building blocks and service",
+      "Billing and Loyalty Management: We provide billing and loyalty management services in a cloud, based on a powerful and proven platform specifically built for MVNO operation in-house",
     ],
   },
   {
     title: "VOD Platform",
     shortTitle: "VOD",
     description:
-      "A rich digital video platform with content security, live streaming, recommendation engine, multilingual support, and powerful user and transaction management.",
+      "i-Cell is an innovation solution provider of VOD Platform. In connection with other subsystems our video content management system brings you content management services, users, transactions, and admin panel. Some of the features of this platform are as follows:",
     icon: PlaySquare,
     image: monitoringImage,
     accent: "from-pink-500/25 to-purple-400/10",
     features: [
-      "Content security",
+      "Content Security",
+      "International banking gateway integration",
+      "Recommendation",
       "Live streaming",
-      "TV catch up",
-      "Parental lock",
-      "Recommendation engine",
+      "Radio channels",
+      "TV Catch Up",
+      "Multi-profile",
+      "Parental Lock",
+      "ABR",
+      "Multilingual subtitles",
+      "Multiple audios",
+      "Bookmark",
+      "Fav",
+      "Reminder",
+      "Rating",
+      "Search",
     ],
   },
 ];
@@ -228,6 +256,113 @@ function SectionHeading({
   );
 }
 
+function ProductModal({
+  product,
+  onClose,
+}: {
+  product: ProductItem | null;
+  onClose: () => void;
+}) {
+  if (!product) return null;
+
+  const Icon = product.icon;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+        onClick={onClose}
+      />
+
+      <div className="relative z-10 max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/15 bg-[#091532] shadow-[0_30px_100px_rgba(0,0,0,0.55)]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(96,122,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_30%)]" />
+
+        <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-4 md:px-7">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white">
+              <Icon size={22} />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+                {product.shortTitle}
+              </p>
+              <h3 className="text-xl font-semibold text-white md:text-2xl">
+                {product.title}
+              </h3>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-slate-200 transition hover:bg-white/15 hover:text-white"
+            aria-label="Close modal"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <div className="relative max-h-[calc(90vh-80px)] overflow-y-auto px-5 py-5 md:px-7 md:py-6">
+          <div className="grid gap-6 lg:grid-cols-[320px,1fr]">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="h-64 w-full object-cover lg:h-full"
+              />
+            </div>
+
+            <div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <h4 className="text-lg font-semibold text-white">
+                  Overview
+                </h4>
+                <p className="mt-3 text-sm leading-7 text-slate-200 md:text-base">
+                  {product.description}
+                </p>
+              </div>
+
+              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <h4 className="text-lg font-semibold text-white">
+                  Features
+                </h4>
+
+                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                  {product.features.map((feature, index) => (
+                    <div
+                      key={`${product.title}-modal-${index}`}
+                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                    >
+                      <CheckCircle2
+                        size={18}
+                        className="mt-0.5 shrink-0 text-emerald-300"
+                      />
+                      <span className="text-sm leading-6 text-slate-100">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-5 flex justify-end">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#17388f] transition hover:opacity-90"
+                >
+                  Close
+                  <ArrowRight size={15} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ProductCard({
   title,
   shortTitle,
@@ -236,60 +371,65 @@ function ProductCard({
   icon: Icon,
   features,
   accent,
-}: ProductItem) {
+  onLearnMore,
+}: ProductItem & { onLearnMore: () => void }) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-white/25 hover:bg-white/[0.12]">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/15 bg-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.12]">
       <div className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-70`} />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px]" />
 
-      <div className="relative flex h-full flex-col p-6 md:p-7">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-white shadow-lg">
-            <Icon size={26} />
+      <div className="relative flex h-full flex-col p-5">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-white">
+            <Icon size={22} />
           </div>
 
-          <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200">
+          <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-200">
             {shortTitle}
           </div>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+        <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
           <img
             src={image}
             alt={title}
-            className="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
         </div>
 
-        <div className="mt-6 flex flex-1 flex-col">
-          <h3 className="min-h-[64px] text-2xl font-semibold leading-tight text-white">
+        <div className="mt-4 flex flex-1 flex-col">
+          <h3 className="text-lg font-semibold leading-snug text-white">
             {title}
           </h3>
 
-          <p className="mt-4 min-h-[140px] text-sm leading-7 text-slate-200 md:text-base">
+          <p className="mt-3 line-clamp-5 text-sm leading-6 text-slate-200">
             {description}
           </p>
 
-          <div className="mt-6 grid gap-3">
-            {features.slice(0, 5).map((feature) => (
+          <div className="mt-4 grid gap-2">
+            {features.slice(0, 5).map((feature, index) => (
               <div
-                key={feature}
-                className="flex min-h-[60px] items-start gap-3 rounded-xl border border-white/10 bg-white/10 px-4 py-3"
+                key={`${title}-${index}`}
+                className="flex items-start gap-2 rounded-lg border border-white/8 bg-white/6 px-3 py-2"
               >
                 <CheckCircle2
-                  size={18}
-                  className="mt-0.5 shrink-0 text-emerald-300"
+                  size={16}
+                  className="mt-[2px] shrink-0 text-emerald-300"
                 />
-                <span className="text-sm leading-6 text-slate-100">
+                <span className="text-sm leading-5 text-slate-100">
                   {feature}
                 </span>
               </div>
             ))}
           </div>
 
-          <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-white">
+          <button
+            type="button"
+            onClick={onLearnMore}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-white"
+          >
             Learn More
-            <ArrowRight size={15} />
+            <ArrowRight size={14} />
           </button>
         </div>
       </div>
@@ -319,6 +459,12 @@ function CapabilityCard({
 }
 
 export default function ProductPage() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(
+    null
+  );
+
+  const products = useMemo(() => allProducts, []);
+
   return (
     <div className="min-h-screen bg-[#07122f] text-white">
       <SiteHeader />
@@ -362,125 +508,13 @@ export default function ProductPage() {
 
         <section className="relative border-b border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr">
-              {allProducts.map((product) => (
-                <ProductCard key={product.title} {...product} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="relative border-b border-white/10">
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
-            <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[linear-gradient(180deg,rgba(12,24,72,0.75),rgba(7,14,40,0.75))] p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:p-10">
-              <div className="grid gap-10 lg:grid-cols-2">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-200">
-                    <Radio size={14} />
-                    Credit+ Channels
-                  </div>
-
-                  <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
-                    Multi-Channel Access for Subscriber Credit Services
-                  </h2>
-
-                  <p className="mt-4 text-base leading-8 text-slate-200 md:text-lg">
-                    Credit+ supports flexible access points that make borrowing
-                    easy for subscribers while giving operators better control
-                    over service delivery and repayment.
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    {[
-                      { label: "USSD", icon: Radio },
-                      { label: "SMS", icon: Smartphone },
-                      { label: "Web App", icon: Globe },
-                      { label: "Mobile App", icon: CreditCard },
-                      { label: "Multi-Channel", icon: MonitorSmartphone },
-                    ].map((channel) => {
-                      const Icon = channel.icon;
-
-                      return (
-                        <div
-                          key={channel.label}
-                          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100"
-                        >
-                          <Icon size={16} />
-                          <span>{channel.label}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
-                  <h3 className="text-2xl font-semibold text-white">
-                    Credit+ Core Advantages
-                  </h3>
-
-                  <div className="mt-6 grid gap-3">
-                    {[
-                      "Advance in the form of Airtime, Data, Bundle Packs or VAS",
-                      "Eligibility scoring based on subscriber transaction history and behaviour",
-                      "Customer segmentation for single or multiple advances",
-                      "Different denominations configurable by the MNO and partner",
-                      "Push and pull channels supported",
-                      "Gamification support to improve loyalty and service uptake",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                      >
-                        <CheckCircle2
-                          size={18}
-                          className="mt-0.5 shrink-0 text-emerald-300"
-                        />
-                        <span className="text-sm leading-6 text-slate-200">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative border-b border-white/10">
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="text-3xl font-semibold text-white md:text-4xl">
-                How Credit+ Works
-              </h2>
-              <p className="mt-4 text-base leading-8 text-slate-200 md:text-lg">
-                A guided advance and repayment experience that helps subscribers
-                stay connected while giving operators control over qualification,
-                disbursement, and recovery.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {[
-                "Subscriber runs out of balance such as airtime, data, bundles, or VAS.",
-                "Subscriber requests an advance through USSD, SMS, web app, mobile app, or other supported channels.",
-                "System evaluates subscriber eligibility and determines the qualified amount.",
-                "Approved advance is credited into the relevant subscriber wallet or service account.",
-                "Subscriber consumes the advance based on the approved package or denomination.",
-                "Upon next recharge, the advanced value is automatically recovered until full repayment is completed.",
-              ].map((step, index) => (
-                <div
-                  key={step}
-                  className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-md"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#e7a54b] to-[#c8852f] text-base font-bold text-white">
-                    {index + 1}
-                  </div>
-
-                  <p className="mt-4 text-sm leading-7 text-slate-200 md:text-base">
-                    {step}
-                  </p>
-                </div>
+            <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.title}
+                  {...product}
+                  onLearnMore={() => setSelectedProduct(product)}
+                />
               ))}
             </div>
           </div>
@@ -496,14 +530,17 @@ export default function ProductPage() {
                   </h2>
                   <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200 md:text-lg">
                     From gaming regulation and messaging infrastructure to MVNO
-                    enablement, AI services, device identity management, and
-                    digital streaming platforms, Bryantel delivers enterprise
-                    solutions tailored for operators, regulators, and modern
-                    digital businesses.
+                    enablement, AI services, device identity management, big
+                    data, subscriber credit, and digital streaming platforms,
+                    Bryantel delivers enterprise solutions tailored for
+                    operators, regulators, and modern digital businesses.
                   </p>
                 </div>
 
-                <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#17388f] shadow-xl transition hover:opacity-90">
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#17388f] shadow-xl transition hover:opacity-90"
+                >
                   Contact Our Team
                   <ArrowRight size={16} />
                 </button>
@@ -514,6 +551,11 @@ export default function ProductPage() {
       </main>
 
       <SiteFooter />
+
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </div>
   );
 }
