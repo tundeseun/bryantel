@@ -69,7 +69,7 @@ export default function SiteFooter() {
             <div className="mt-2 space-y-2 text-xs text-slate-300/85">
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-amber-400" />
-                <span>+123 456 7890</span>
+                <span>+2348090742355</span>
               </div>
 
               <div className="flex items-center gap-2">

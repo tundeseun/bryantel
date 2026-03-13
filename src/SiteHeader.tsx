@@ -61,12 +61,12 @@ export function TopBar() {
         >
           <span className="flex items-center gap-2 rounded-full px-2 py-1 transition hover:bg-slate-100">
             <Phone className="h-4 w-4 text-amber-600" />
-            +123 456 7890
+            +2348090742355.
           </span>
 
           <span className="flex items-center gap-2 rounded-full px-2 py-1 transition hover:bg-slate-100">
             <Mail className="h-4 w-4 text-amber-600" />
-            info@bryantel.com
+            info@bryantel.net.
           </span>
 
           <button className="rounded-full border border-slate-200 bg-white p-3 text-slate-600 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-700 hover:shadow-md">

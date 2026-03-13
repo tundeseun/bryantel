@@ -31,7 +31,7 @@ export default function ContactPage() {
               <Phone className="mb-4 text-blue-400" size={32} />
               <h3 className="text-xl font-semibold">Phone</h3>
               <p className="mt-2 text-slate-300">
-                +123 456 7890
+               +2348090742355
               </p>
             </div>
 
