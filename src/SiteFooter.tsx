@@ -36,11 +36,11 @@ export default function SiteFooter() {
               <Link to="/about" className="block transition hover:text-white">
                 About
               </Link>
-              <Link to="/solutions" className="block transition hover:text-white">
-                Solutions
-              </Link>
               <Link to="/products" className="block transition hover:text-white">
                 Products
+              </Link>
+              <Link to="/contact" className="block transition hover:text-white">
+                Contact Us
               </Link>
             </div>
           </div>
@@ -50,13 +50,13 @@ export default function SiteFooter() {
               Products
             </h4>
             <div className="mt-2 space-y-1.5 text-xs text-slate-300/85">
-              <Link to="/products/ams" className="block transition hover:text-white">
+              <Link to="/products" className="block transition hover:text-white">
                 AMS
               </Link>
-              <Link to="/products/credit-plus" className="block transition hover:text-white">
+              <Link to="/products" className="block transition hover:text-white">
                 Credit+
               </Link>
-              <Link to="/solutions" className="block transition hover:text-white">
+              <Link to="/products" className="block transition hover:text-white">
                 Monitoring
               </Link>
             </div>
