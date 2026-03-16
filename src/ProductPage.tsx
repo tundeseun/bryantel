@@ -3,10 +3,7 @@ import {
   ArrowRight,
   BarChart3,
   CheckCircle2,
-  // CreditCard,
   Globe,
-  // MonitorSmartphone,
-  // ShieldCheck,
   BellRing,
   Bot,
   PhoneCall,
@@ -16,7 +13,6 @@ import {
   Network,
   PlaySquare,
   MessageSquareText,
-  // Users,
   X,
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
@@ -41,23 +37,11 @@ const allProducts: ProductItem[] = [
     title: "Advanced Monitoring System",
     shortTitle: "AMS",
     description:
-      "AMS is a gaming industry monitoring platform that provides real time analytic solution based on big data and supports the regulation of gaming activities, AMS provides regulators 360-degree view of gaming operator sales and players’ activities",
+      "AMS is a gaming industry monitoring platform that provides real time analytic solution based on big data and supports the regulation of gaming activities, AMS provides regulators 360-degree view of gaming operator sales and players’ activities.",
     icon: BarChart3,
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
-    features: [
-      // "Reports and Data Analysis",
-      // "Dispute Handling for Stakers",
-      // "Save OPEX and Resources",
-      // "Automatic Tax Collection",
-      // "Screen to Manage Lottery Operators",
-      // "Lottery License Management",
-      // "Centralized Monitoring System",
-      // "360 degree View of Lottery Operation",
-      // "Underage Gambling Detection",
-      // "Addicted Gambling Detection",
-      // "Anti-Money Laundering (AML) Detection",
-    ],
+    features: [],
   },
   {
     title: "VAS Aggregator Platform (VAP)",
@@ -67,100 +51,57 @@ const allProducts: ProductItem[] = [
     icon: Network,
     image: monitoringImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
-    features: [
-      // "Service Management",
-      // "User Management",
-      // "Partner Management",
-      // "Access Channels (SMS/MMS/USSD/APP)",
-      // "Access Code Management",
-      // "Direct Carrier Billing",
-    ],
+    features: [],
   },
   {
     title: "Messaging",
     shortTitle: "Messaging",
     description:
-      "We offer premium bulk SMS, MMS, voice and USSD services. Enjoy exceptional 24/7 support and send and receive messages with i-Cell’s trusted APIs",
+      "We offer premium bulk SMS, MMS, voice and USSD services. Enjoy exceptional 24/7 support and send and receive messages with i-Cell’s trusted APIs.",
     icon: MessageSquareText,
     image: monitoringImage,
     accent: "from-sky-500/25 to-blue-400/10",
-    features: [
-      // "Premium bulk SMS",
-      // "MMS services",
-      // "Voice services",
-      // "USSD services",
-      // "Exceptional 24/7 support",
-      // "Trusted APIs",
-    ],
+    features: [],
   },
   {
     title: "AI Companion",
     shortTitle: "AI",
     description:
-      "AI Companion is an out-of-the-box service for MNOs, designed to enhance telco self-care mobile apps with AI capabilities. Easy to integrate and deploy, this service instantly provides smart, contextual recommendations tailored to each user. Join us in transforming MNO apps into a powerful tool for revenue boost",
+      "AI Companion is an out-of-the-box service for MNOs, designed to enhance telco self-care mobile apps with AI capabilities. Easy to integrate and deploy, this service instantly provides smart, contextual recommendations tailored to each user. Join us in transforming MNO apps into a powerful tool for revenue boost.",
     icon: Bot,
     image: monitoringImage,
     accent: "from-emerald-500/25 to-teal-400/10",
-    features: [
-      // "Out-of-the-box service for MNOs",
-      // "Enhance telco self-care mobile apps with AI capabilities",
-      // "Easy to integrate and deploy",
-      // "Smart, contextual recommendations tailored to each user",
-      // "Transforming MNO apps into a powerful tool for revenue boost",
-    ],
+    features: [],
   },
   {
     title: "AI Caller ID",
     shortTitle: "Caller ID",
     description:
-      "Our Caller ID is an Add-on Core Service for MNOs with the following capabilities :",
+      "Our Caller ID is an Add-on Core Service for MNOs with the following capabilities.",
     icon: PhoneCall,
     image: monitoringImage,
     accent: "from-amber-500/25 to-orange-400/10",
-    features: [
-      // "Instantly identifies almost all local phone numbers",
-      // "Regardless of network & type: personal, business, spam, mobile, landline, postpaid, prepaid...",
-      // "Original privacy-first GDPR friendly solution. Creates real-time prediction about caller identity",
-      // "Combines dozens of sources instantly to create best-guess caller ID tag",
-    ],
+    features: [],
   },
   {
     title: "Equipment Identity Register (EIR)",
     shortTitle: "EIR",
     description:
-      "The EIR registers IMEI numbers of all mobile devices, such as mobile phones, smart phones, hand-held computers, tablet PC's, modems, POS machines etc, which use national GSM networks for their electronic communications. The System only permits electronic communications to those mobile devices which are registered, and have no legal obstacles for their usage in the country. IMEI Registry System blocks electronic communications of unregistered, stolen, lost mobile devices and provides tracking of illegal activities. The Equipment Identity Register (EIR) provides a direct interface to the IMEI DB.",
+      "The EIR registers IMEI numbers of all mobile devices, such as mobile phones, smart phones, hand-held computers, tablet PCs, modems, POS machines and more, which use national GSM networks for their electronic communications. The system only permits electronic communications to those mobile devices which are registered and have no legal obstacles for their usage in the country. IMEI Registry System blocks electronic communications of unregistered, stolen, lost mobile devices and provides tracking of illegal activities. The Equipment Identity Register (EIR) provides a direct interface to the IMEI DB.",
     icon: Cpu,
     image: monitoringImage,
     accent: "from-rose-500/25 to-red-400/10",
-    features: [
-      // "Manage EIR Equipment Lists",
-      // "Query an IMEI's Status",
-      // "Bulk Transfer Equipment List Data between EIR and local files. For example, FTP a new blacklist file from a fraud agency and use the EIR GUI to upload it to EIR",
-      // "Support for Bulk Deletion of IMEIs; to safely and efficiently process large numbers of IMEIs",
-      // "Run Tests on EIR Equipment Lists",
-      // "IMEI Database Management: configure and control the behavior of the EIR with the central GSM Association’s IMEI database.",
-      // "Cloned Handset User Management: manage situations where cloned handsets must be transitioned progressively via an override feature.",
-      // "MSIDSN to IMEI Search Feature: easily locate an IMEI using only the phone number (MSISDN) to add to a black list.",
-      // "Fraud Analysis Tool: create reports on the multiple uses of an IMEI or IMSI with multiple IMSIs or IMEIs.",
-      // "Audit and Alarm Log Display: search and view logs files produced on the EIR node(s).",
-      // "User Account Levels: to insure critical information is available only to authorized users.",
-    ],
+    features: [],
   },
   {
     title: "Big Data",
     shortTitle: "Big Data",
     description:
-      "We have established an enterprise-wide big data solution that can Gather data directly from telco network element CRM and charging platform etc. Our solution can work with or without pre-processed data and also structure data to provide intelligent reporting. The CDR extracted from the telco will be structure by our report system to provide mobility-related statistics, such as migration, commuting, urbanization and tourism. Our system can distinguish between high resolution data, such as signaling data, and call detail records (CDR).",
+      "We have established an enterprise-wide big data solution that can gather data directly from telco network element CRM and charging platform etc. Our solution can work with or without pre-processed data and also structure data to provide intelligent reporting. The CDR extracted from the telco will be structured by our report system to provide mobility-related statistics, such as migration, commuting, urbanization and tourism. Our system can distinguish between high resolution data, such as signaling data, and call detail records (CDR).",
     icon: Database,
     image: monitoringImage,
     accent: "from-cyan-500/25 to-sky-400/10",
-    features: [
-      // "Gather data directly from telco network element CRM and charging platform etc.",
-      // "Can work with or without pre-processed data",
-      // "Structure data to provide intelligent reporting",
-      // "Provide mobility-related statistics, such as migration, commuting, urbanization and tourism",
-      // "Distinguish between high resolution data, such as signaling data, and call detail records (CDR)",
-    ],
+    features: [],
   },
   {
     title: "Credit+",
@@ -170,62 +111,27 @@ const allProducts: ProductItem[] = [
     icon: Wallet,
     image: creditImage,
     accent: "from-indigo-500/25 to-blue-400/10",
-    features: [
-      // "Advance in form of Airtime, Data, Bundle Packs or VAS",
-      // "Every Subscriber is scored for credit eligibility based on historical transaction on the network and behaviour on the service",
-      // "Customer segmentation enabling us to give single or multiple advances to a subscriber based on eligibility score",
-      // "The Advance is offered in different denominations determined by the MNO and Partner",
-      // "Multiple loan types supported: Airtime",
-      // "Multiple loan types supported: Data",
-      // "Multiple loan types supported: Mobile money",
-      // "Multiple loan types supported: Value-added-services",
-      // "Multiple channels supported: USSD, SMS, Web App, Mobile App;",
-      // "Multi-lingual capabilities.",
-      // "Push and pull channels both supported—customer can subscribe for automatic loan once their balance reaches a defined threshold (feature relies on OCS threshold monitoring capabilities).",
-      // "Gamification support (points-based) to drive customer loyalty and service uptake.",
-    ],
+    features: [],
   },
   {
     title: "MVNO Services",
     shortTitle: "MVNO",
     description:
-      "We are MVNO enabler and we provide the following MVNO services",
+      "We are MVNO enabler and we provide the following MVNO services.",
     icon: Globe,
     image: monitoringImage,
     accent: "from-purple-500/25 to-indigo-400/10",
-    features: [
-      // "Consulting : We are prepared to share our experience with you, and offer consulting in finding the best market approach and optimal technical solution",
-      // "Service Management: We operate and maintain enabling technology for host network operators and virtual operators",
-      // "Technology: We use working blueprints for cost-effective platform solutions, leveraging our carrier-grade portfolio of network and IT building blocks and service",
-      // "Billing and Loyalty Management: We provide billing and loyalty management services in a cloud, based on a powerful and proven platform specifically built for MVNO operation in-house",
-    ],
+    features: [],
   },
   {
     title: "VOD Platform",
     shortTitle: "VOD",
     description:
-      "i-Cell is an innovation solution provider of VOD Platform. In connection with other subsystems our video content management system brings you content management services, users, transactions, and admin panel. Some of the features of this platform are as follows:",
+      "i-Cell is an innovation solution provider of VOD Platform. In connection with other subsystems our video content management system brings you content management services, users, transactions, and admin panel. Some of the features of this platform are as follows.",
     icon: PlaySquare,
     image: monitoringImage,
     accent: "from-pink-500/25 to-purple-400/10",
-    features: [
-      // "Content Security",
-      // "International banking gateway integration",
-      // "Recommendation",
-      // "Live streaming",
-      // "Radio channels",
-      // "TV Catch Up",
-      // "Multi-profile",
-      // "Parental Lock",
-      // "ABR",
-      // "Multilingual subtitles",
-      // "Multiple audios",
-      // "Bookmark",
-      // "Fav",
-      // "Reminder",
-      // "Rating",
-      // "Search",
-    ],
+    features: [],
   },
 ];
 
@@ -282,6 +188,7 @@ function ProductModal({
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white">
               <Icon size={22} />
             </div>
+
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                 {product.shortTitle}
@@ -314,36 +221,34 @@ function ProductModal({
 
             <div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h4 className="text-lg font-semibold text-white">
-                  Overview
-                </h4>
+                <h4 className="text-lg font-semibold text-white">Overview</h4>
                 <p className="mt-3 text-sm leading-7 text-slate-200 md:text-base">
                   {product.description}
                 </p>
               </div>
 
-              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h4 className="text-lg font-semibold text-white">
-                  Features
-                </h4>
+              {product.features.length > 0 ? (
+                <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <h4 className="text-lg font-semibold text-white">Features</h4>
 
-                <div className="mt-4 grid gap-3 md:grid-cols-2">
-                  {product.features.map((feature, index) => (
-                    <div
-                      key={`${product.title}-modal-${index}`}
-                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                    >
-                      <CheckCircle2
-                        size={18}
-                        className="mt-0.5 shrink-0 text-emerald-300"
-                      />
-                      <span className="text-sm leading-6 text-slate-100">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
+                  <div className="mt-4 grid gap-3 md:grid-cols-2">
+                    {product.features.map((feature, index) => (
+                      <div
+                        key={`${product.title}-modal-${index}`}
+                        className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                      >
+                        <CheckCircle2
+                          size={18}
+                          className="mt-0.5 shrink-0 text-emerald-300"
+                        />
+                        <span className="text-sm leading-6 text-slate-100">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ) : null}
 
               <div className="mt-5 flex justify-end">
                 <button
@@ -372,61 +277,100 @@ function ProductCard({
   features,
   accent,
   onLearnMore,
-}: ProductItem & { onLearnMore: () => void }) {
+  landscape = false,
+}: ProductItem & { onLearnMore: () => void; landscape?: boolean }) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/15 bg-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.12]">
+    <div
+      className={[
+        "group relative overflow-hidden rounded-[24px] border border-white/15 bg-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.12]",
+        landscape ? "w-full max-w-5xl" : "flex h-full flex-col",
+      ].join(" ")}
+    >
       <div className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-70`} />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px]" />
 
-      <div className="relative flex h-full flex-col p-5">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-white">
-            <Icon size={22} />
+      <div
+        className={[
+          "relative h-full p-5",
+          landscape
+            ? "grid gap-6 lg:grid-cols-[380px,1fr] lg:items-center"
+            : "flex flex-col",
+        ].join(" ")}
+      >
+        <div className={landscape ? "order-2 lg:order-1" : ""}>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-white">
+              <Icon size={22} />
+            </div>
+
+            <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-200">
+              {shortTitle}
+            </div>
           </div>
 
-          <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-200">
-            {shortTitle}
+          <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <img
+              src={image}
+              alt={title}
+              className={[
+                "w-full object-cover transition duration-500 group-hover:scale-[1.03]",
+                landscape ? "h-64 lg:h-[280px]" : "h-40",
+              ].join(" ")}
+            />
           </div>
         </div>
 
-        <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-          <img
-            src={image}
-            alt={title}
-            className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-          />
-        </div>
-
-        <div className="mt-4 flex flex-1 flex-col">
-          <h3 className="text-lg font-semibold leading-snug text-white">
+        <div
+          className={[
+            landscape
+              ? "order-1 lg:order-2 flex flex-col justify-center"
+              : "mt-4 flex flex-1 flex-col",
+          ].join(" ")}
+        >
+          <h3
+            className={
+              landscape
+                ? "text-2xl font-semibold leading-snug text-white"
+                : "text-lg font-semibold leading-snug text-white"
+            }
+          >
             {title}
           </h3>
 
-          <p className="mt-3 line-clamp-5 text-sm leading-6 text-slate-200">
+          <p
+            className={[
+              "mt-3 text-slate-200",
+              landscape
+                ? "line-clamp-4 text-base leading-7"
+                : "line-clamp-5 text-sm leading-6",
+            ].join(" ")}
+          >
             {description}
           </p>
 
-          <div className="mt-4 grid gap-2">
-            {features.slice(0, 5).map((feature, index) => (
-              <div
-                key={`${title}-${index}`}
-                className="flex items-start gap-2 rounded-lg border border-white/8 bg-white/6 px-3 py-2"
-              >
-                <CheckCircle2
-                  size={16}
-                  className="mt-[2px] shrink-0 text-emerald-300"
-                />
-                <span className="text-sm leading-5 text-slate-100">
-                  {feature}
-                </span>
-              </div>
-            ))}
-          </div>
+          {features.length > 0 ? (
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {features.slice(0, landscape ? 4 : 5).map((feature, index) => (
+                <div
+                  key={`${title}-${index}`}
+                  className="flex items-start gap-2 rounded-lg border border-white/8 bg-white/6 px-3 py-2"
+                >
+                  <CheckCircle2
+                    size={16}
+                    className="mt-[2px] shrink-0 text-emerald-300"
+                  />
+                  <span className="text-sm leading-5 text-slate-100">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : null}
 
           <button
             type="button"
             onClick={onLearnMore}
-            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-white"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-white"
           >
             Learn More
             <ArrowRight size={14} />
@@ -436,27 +380,6 @@ function ProductCard({
     </div>
   );
 }
-
-// function CapabilityCard({
-//   icon: Icon,
-//   title,
-//   text,
-// }: {
-//   icon: React.ElementType;
-//   title: string;
-//   text: string;
-// }) {
-//   return (
-//     <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
-//       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-300">
-//         <Icon size={22} />
-//       </div>
-
-//       <h3 className="text-lg font-semibold text-white">{title}</h3>
-//       <p className="mt-2 text-sm leading-7 text-slate-300">{text}</p>
-//     </div>
-//   );
-// }
 
 export default function ProductPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(
@@ -480,74 +403,37 @@ export default function ProductPage() {
               title="Bryantel Products & Solutions"
               subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
             />
-
-            {/* <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              <CapabilityCard
-                icon={ShieldCheck}
-                title="Regulatory Technology"
-                text="Solutions that improve compliance, oversight, auditability, and operational transparency."
-              />
-              <CapabilityCard
-                icon={CreditCard}
-                title="Digital Finance"
-                text="Subscriber and operator-focused platforms for credit, value-added services, and monetization."
-              />
-              <CapabilityCard
-                icon={MonitorSmartphone}
-                title="Telecom Platforms"
-                text="Robust service delivery systems built for digital channels, subscriber engagement, and scale."
-              />
-              <CapabilityCard
-                icon={Users}
-                title="Enterprise Delivery"
-                text="Enterprise-grade solutions tailored for operators, regulators, and digital service providers."
-              />
-            </div> */}
           </div>
         </section>
 
         <section className="relative border-b border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
             <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
-                <ProductCard
-                  key={product.title}
-                  {...product}
-                  onLearnMore={() => setSelectedProduct(product)}
-                />
-              ))}
+              {products.map((product, index) => {
+                const isLast = index === products.length - 1;
+                const shouldMakeLastLandscape =
+                  products.length % 3 === 1 && isLast;
+
+                return (
+                  <div
+                    key={product.title}
+                    className={
+                      shouldMakeLastLandscape
+                        ? "md:col-span-2 lg:col-span-3 flex justify-center"
+                        : ""
+                    }
+                  >
+                    <ProductCard
+                      {...product}
+                      landscape={shouldMakeLastLandscape}
+                      onLearnMore={() => setSelectedProduct(product)}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
-
-        {/* <section className="relative border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
-            <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[linear-gradient(135deg,rgba(21,39,95,0.92),rgba(8,15,40,0.92))] p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr,auto] lg:items-center">
-                <div>
-                  <h2 className="text-3xl font-semibold text-white md:text-4xl">
-                    Innovative Solutions Built for Scale
-                  </h2>
-                  <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200 md:text-lg">
-                    From gaming regulation and messaging infrastructure to MVNO
-                    enablement, AI services, device identity management, big
-                    data, subscriber credit, and digital streaming platforms,
-                    Bryantel delivers enterprise solutions tailored for
-                    operators, regulators, and modern digital businesses.
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#17388f] shadow-xl transition hover:opacity-90"
-                >
-                  Contact Our Team
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </main>
 
       <SiteFooter />
