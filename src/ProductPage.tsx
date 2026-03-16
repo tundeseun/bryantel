@@ -3,10 +3,10 @@ import {
   ArrowRight,
   BarChart3,
   CheckCircle2,
-  CreditCard,
+  // CreditCard,
   Globe,
-  MonitorSmartphone,
-  ShieldCheck,
+  // MonitorSmartphone,
+  // ShieldCheck,
   BellRing,
   Bot,
   PhoneCall,
@@ -16,7 +16,7 @@ import {
   Network,
   PlaySquare,
   MessageSquareText,
-  Users,
+  // Users,
   X,
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
@@ -46,17 +46,17 @@ const allProducts: ProductItem[] = [
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
     features: [
-      "Reports and Data Analysis",
-      "Dispute Handling for Stakers",
-      "Save OPEX and Resources",
-      "Automatic Tax Collection",
-      "Screen to Manage Lottery Operators",
-      "Lottery License Management",
-      "Centralized Monitoring System",
-      "360 degree View of Lottery Operation",
-      "Underage Gambling Detection",
-      "Addicted Gambling Detection",
-      "Anti-Money Laundering (AML) Detection",
+      // "Reports and Data Analysis",
+      // "Dispute Handling for Stakers",
+      // "Save OPEX and Resources",
+      // "Automatic Tax Collection",
+      // "Screen to Manage Lottery Operators",
+      // "Lottery License Management",
+      // "Centralized Monitoring System",
+      // "360 degree View of Lottery Operation",
+      // "Underage Gambling Detection",
+      // "Addicted Gambling Detection",
+      // "Anti-Money Laundering (AML) Detection",
     ],
   },
   {
@@ -68,12 +68,12 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
     features: [
-      "Service Management",
-      "User Management",
-      "Partner Management",
-      "Access Channels (SMS/MMS/USSD/APP)",
-      "Access Code Management",
-      "Direct Carrier Billing",
+      // "Service Management",
+      // "User Management",
+      // "Partner Management",
+      // "Access Channels (SMS/MMS/USSD/APP)",
+      // "Access Code Management",
+      // "Direct Carrier Billing",
     ],
   },
   {
@@ -85,12 +85,12 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-sky-500/25 to-blue-400/10",
     features: [
-      "Premium bulk SMS",
-      "MMS services",
-      "Voice services",
-      "USSD services",
-      "Exceptional 24/7 support",
-      "Trusted APIs",
+      // "Premium bulk SMS",
+      // "MMS services",
+      // "Voice services",
+      // "USSD services",
+      // "Exceptional 24/7 support",
+      // "Trusted APIs",
     ],
   },
   {
@@ -102,11 +102,11 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-emerald-500/25 to-teal-400/10",
     features: [
-      "Out-of-the-box service for MNOs",
-      "Enhance telco self-care mobile apps with AI capabilities",
-      "Easy to integrate and deploy",
-      "Smart, contextual recommendations tailored to each user",
-      "Transforming MNO apps into a powerful tool for revenue boost",
+      // "Out-of-the-box service for MNOs",
+      // "Enhance telco self-care mobile apps with AI capabilities",
+      // "Easy to integrate and deploy",
+      // "Smart, contextual recommendations tailored to each user",
+      // "Transforming MNO apps into a powerful tool for revenue boost",
     ],
   },
   {
@@ -118,10 +118,10 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-amber-500/25 to-orange-400/10",
     features: [
-      "Instantly identifies almost all local phone numbers",
-      "Regardless of network & type: personal, business, spam, mobile, landline, postpaid, prepaid...",
-      "Original privacy-first GDPR friendly solution. Creates real-time prediction about caller identity",
-      "Combines dozens of sources instantly to create best-guess caller ID tag",
+      // "Instantly identifies almost all local phone numbers",
+      // "Regardless of network & type: personal, business, spam, mobile, landline, postpaid, prepaid...",
+      // "Original privacy-first GDPR friendly solution. Creates real-time prediction about caller identity",
+      // "Combines dozens of sources instantly to create best-guess caller ID tag",
     ],
   },
   {
@@ -133,17 +133,17 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-rose-500/25 to-red-400/10",
     features: [
-      "Manage EIR Equipment Lists",
-      "Query an IMEI's Status",
-      "Bulk Transfer Equipment List Data between EIR and local files. For example, FTP a new blacklist file from a fraud agency and use the EIR GUI to upload it to EIR",
-      "Support for Bulk Deletion of IMEIs; to safely and efficiently process large numbers of IMEIs",
-      "Run Tests on EIR Equipment Lists",
-      "IMEI Database Management: configure and control the behavior of the EIR with the central GSM Association’s IMEI database.",
-      "Cloned Handset User Management: manage situations where cloned handsets must be transitioned progressively via an override feature.",
-      "MSIDSN to IMEI Search Feature: easily locate an IMEI using only the phone number (MSISDN) to add to a black list.",
-      "Fraud Analysis Tool: create reports on the multiple uses of an IMEI or IMSI with multiple IMSIs or IMEIs.",
-      "Audit and Alarm Log Display: search and view logs files produced on the EIR node(s).",
-      "User Account Levels: to insure critical information is available only to authorized users.",
+      // "Manage EIR Equipment Lists",
+      // "Query an IMEI's Status",
+      // "Bulk Transfer Equipment List Data between EIR and local files. For example, FTP a new blacklist file from a fraud agency and use the EIR GUI to upload it to EIR",
+      // "Support for Bulk Deletion of IMEIs; to safely and efficiently process large numbers of IMEIs",
+      // "Run Tests on EIR Equipment Lists",
+      // "IMEI Database Management: configure and control the behavior of the EIR with the central GSM Association’s IMEI database.",
+      // "Cloned Handset User Management: manage situations where cloned handsets must be transitioned progressively via an override feature.",
+      // "MSIDSN to IMEI Search Feature: easily locate an IMEI using only the phone number (MSISDN) to add to a black list.",
+      // "Fraud Analysis Tool: create reports on the multiple uses of an IMEI or IMSI with multiple IMSIs or IMEIs.",
+      // "Audit and Alarm Log Display: search and view logs files produced on the EIR node(s).",
+      // "User Account Levels: to insure critical information is available only to authorized users.",
     ],
   },
   {
@@ -155,11 +155,11 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-cyan-500/25 to-sky-400/10",
     features: [
-      "Gather data directly from telco network element CRM and charging platform etc.",
-      "Can work with or without pre-processed data",
-      "Structure data to provide intelligent reporting",
-      "Provide mobility-related statistics, such as migration, commuting, urbanization and tourism",
-      "Distinguish between high resolution data, such as signaling data, and call detail records (CDR)",
+      // "Gather data directly from telco network element CRM and charging platform etc.",
+      // "Can work with or without pre-processed data",
+      // "Structure data to provide intelligent reporting",
+      // "Provide mobility-related statistics, such as migration, commuting, urbanization and tourism",
+      // "Distinguish between high resolution data, such as signaling data, and call detail records (CDR)",
     ],
   },
   {
@@ -171,18 +171,18 @@ const allProducts: ProductItem[] = [
     image: creditImage,
     accent: "from-indigo-500/25 to-blue-400/10",
     features: [
-      "Advance in form of Airtime, Data, Bundle Packs or VAS",
-      "Every Subscriber is scored for credit eligibility based on historical transaction on the network and behaviour on the service",
-      "Customer segmentation enabling us to give single or multiple advances to a subscriber based on eligibility score",
-      "The Advance is offered in different denominations determined by the MNO and Partner",
-      "Multiple loan types supported: Airtime",
-      "Multiple loan types supported: Data",
-      "Multiple loan types supported: Mobile money",
-      "Multiple loan types supported: Value-added-services",
-      "Multiple channels supported: USSD, SMS, Web App, Mobile App;",
-      "Multi-lingual capabilities.",
-      "Push and pull channels both supported—customer can subscribe for automatic loan once their balance reaches a defined threshold (feature relies on OCS threshold monitoring capabilities).",
-      "Gamification support (points-based) to drive customer loyalty and service uptake.",
+      // "Advance in form of Airtime, Data, Bundle Packs or VAS",
+      // "Every Subscriber is scored for credit eligibility based on historical transaction on the network and behaviour on the service",
+      // "Customer segmentation enabling us to give single or multiple advances to a subscriber based on eligibility score",
+      // "The Advance is offered in different denominations determined by the MNO and Partner",
+      // "Multiple loan types supported: Airtime",
+      // "Multiple loan types supported: Data",
+      // "Multiple loan types supported: Mobile money",
+      // "Multiple loan types supported: Value-added-services",
+      // "Multiple channels supported: USSD, SMS, Web App, Mobile App;",
+      // "Multi-lingual capabilities.",
+      // "Push and pull channels both supported—customer can subscribe for automatic loan once their balance reaches a defined threshold (feature relies on OCS threshold monitoring capabilities).",
+      // "Gamification support (points-based) to drive customer loyalty and service uptake.",
     ],
   },
   {
@@ -194,10 +194,10 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-purple-500/25 to-indigo-400/10",
     features: [
-      "Consulting : We are prepared to share our experience with you, and offer consulting in finding the best market approach and optimal technical solution",
-      "Service Management: We operate and maintain enabling technology for host network operators and virtual operators",
-      "Technology: We use working blueprints for cost-effective platform solutions, leveraging our carrier-grade portfolio of network and IT building blocks and service",
-      "Billing and Loyalty Management: We provide billing and loyalty management services in a cloud, based on a powerful and proven platform specifically built for MVNO operation in-house",
+      // "Consulting : We are prepared to share our experience with you, and offer consulting in finding the best market approach and optimal technical solution",
+      // "Service Management: We operate and maintain enabling technology for host network operators and virtual operators",
+      // "Technology: We use working blueprints for cost-effective platform solutions, leveraging our carrier-grade portfolio of network and IT building blocks and service",
+      // "Billing and Loyalty Management: We provide billing and loyalty management services in a cloud, based on a powerful and proven platform specifically built for MVNO operation in-house",
     ],
   },
   {
@@ -209,22 +209,22 @@ const allProducts: ProductItem[] = [
     image: monitoringImage,
     accent: "from-pink-500/25 to-purple-400/10",
     features: [
-      "Content Security",
-      "International banking gateway integration",
-      "Recommendation",
-      "Live streaming",
-      "Radio channels",
-      "TV Catch Up",
-      "Multi-profile",
-      "Parental Lock",
-      "ABR",
-      "Multilingual subtitles",
-      "Multiple audios",
-      "Bookmark",
-      "Fav",
-      "Reminder",
-      "Rating",
-      "Search",
+      // "Content Security",
+      // "International banking gateway integration",
+      // "Recommendation",
+      // "Live streaming",
+      // "Radio channels",
+      // "TV Catch Up",
+      // "Multi-profile",
+      // "Parental Lock",
+      // "ABR",
+      // "Multilingual subtitles",
+      // "Multiple audios",
+      // "Bookmark",
+      // "Fav",
+      // "Reminder",
+      // "Rating",
+      // "Search",
     ],
   },
 ];
@@ -437,26 +437,26 @@ function ProductCard({
   );
 }
 
-function CapabilityCard({
-  icon: Icon,
-  title,
-  text,
-}: {
-  icon: React.ElementType;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-300">
-        <Icon size={22} />
-      </div>
+// function CapabilityCard({
+//   icon: Icon,
+//   title,
+//   text,
+// }: {
+//   icon: React.ElementType;
+//   title: string;
+//   text: string;
+// }) {
+//   return (
+//     <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+//       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-300">
+//         <Icon size={22} />
+//       </div>
 
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-7 text-slate-300">{text}</p>
-    </div>
-  );
-}
+//       <h3 className="text-lg font-semibold text-white">{title}</h3>
+//       <p className="mt-2 text-sm leading-7 text-slate-300">{text}</p>
+//     </div>
+//   );
+// }
 
 export default function ProductPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(
@@ -478,10 +478,10 @@ export default function ProductPage() {
           <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8 lg:py-24">
             <SectionHeading
               title="Bryantel Products & Solutions"
-              subtitle="Enterprise platforms designed for telecom operators, regulators, and digital service providers."
+              subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
             />
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {/* <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               <CapabilityCard
                 icon={ShieldCheck}
                 title="Regulatory Technology"
@@ -502,7 +502,7 @@ export default function ProductPage() {
                 title="Enterprise Delivery"
                 text="Enterprise-grade solutions tailored for operators, regulators, and digital service providers."
               />
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -520,7 +520,7 @@ export default function ProductPage() {
           </div>
         </section>
 
-        <section className="relative border-t border-white/10">
+        {/* <section className="relative border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
             <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[linear-gradient(135deg,rgba(21,39,95,0.92),rgba(8,15,40,0.92))] p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] md:p-10">
               <div className="grid gap-8 lg:grid-cols-[1fr,auto] lg:items-center">
@@ -547,7 +547,7 @@ export default function ProductPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <SiteFooter />

@@ -49,9 +49,9 @@ const slides: Slide[] = [
     id: 1,
     eyebrow: "Enterprise Technology Across MEA",
     title:
-      "Powering Growth with Enterprise Technology Across the Middle East and Africa",
+      "Bryantel is a leading solution provider and One of the fastest growing holdings in the Middle East and Africa",
     subtitle:
-      "Bryantel delivers innovative technology solutions that help organizations grow, regulate, transform, and lead with confidence.",
+      "We develop your strength with state of the art technology.",
     cta1: "Explore Products",
     cta2: "Request a Consultation",
     cta1Link: "/products",
@@ -61,86 +61,86 @@ const slides: Slide[] = [
     id: 2,
     eyebrow: "Gaming Regulation & Analytics",
     title:
-      "Advanced Monitoring and Regulatory Solutions for Modern Gaming Ecosystems",
+      "Products Built for Performance, Insight, Monitoring, and Revenue Assurance",
     subtitle:
-      "Our platforms empower regulators with real-time analytics, transparency, automation, and a 360-degree view of operations.",
-    cta1: "Explore AMS",
-    cta2: "Book a Demo",
-    cta1Link: "/products/ams",
+      "Bryantel helps enterprises and regulators deploy reliable, future-ready solutions.",
+    cta1: "Explore Products",
+    cta2: "Request a Consultation",
+    cta1Link: "/products",
     cta2Link: "/contact",
   },
   {
     id: 3,
     eyebrow: "Digital Products That Scale",
     title:
-      "Products Built for Performance, Insight, Monitoring, and Revenue Innovation",
+      "Our Passion for the very best in Technology, quality of service is at the heart of our commitment to our customers.",
     subtitle:
-      "From Advanced Monitoring System to Credit+, Bryantel helps enterprises and regulators deploy reliable, future-ready solutions.",
-    cta1: "View Solutions",
+      "Bryantel delivers innovative technology solutions that help organizations grow, transform  and lead with confidence.",
+    cta1: "Explore Products",
     cta2: "Talk to Bryantel",
-    cta1Link: "/solutions",
+    cta1Link: "/products",
     cta2Link: "/contact",
   },
 ];
 
-const amsOfferings = [
-  "Reports and Data Analysis",
-  "Screen to manage lottery operators",
-  "Dispute handling for stakers",
-  "Lottery License Management",
-  "Save Opex and resources",
-  "Centralized monitoring system",
-  "Automatic Tax collection",
-  "360-degree view of lottery operation",
-];
+// const amsOfferings = [
+//   "Reports and Data Analysis",
+//   "Screen to manage lottery operators",
+//   "Dispute handling for stakers",
+//   "Lottery License Management",
+//   "Save Opex and resources",
+//   "Centralized monitoring system",
+//   "Automatic Tax collection",
+//   "360-degree view of lottery operation",
+// ];
 
-const creditOfferings = [
-  "Advance in form of Airtime, Data, Bundle Packs or VAS",
-  "Customer segmentation for single or multiple advances based on eligibility scores",
-  "Credit scoring using historical network transactions and subscriber behavior",
-  "Flexible advance denominations determined by MNO and Partner",
-];
+// const creditOfferings = [
+//   "Advance in form of Airtime, Data, Bundle Packs or VAS",
+//   "Customer segmentation for single or multiple advances based on eligibility scores",
+//   "Credit scoring using historical network transactions and subscriber behavior",
+//   "Flexible advance denominations determined by MNO and Partner",
+// ];
 
 const products: ProductCard[] = [
   {
     title: "Advanced Monitoring System",
     description:
-      "Advanced Monitoring System (AMS) is a gaming industry monitoring platform providing real-time analytics based on big data and supporting the regulation of gaming activities.",
+       "",
     button: "Explore AMS",
     href: "/products/ams",
     icon: <ShieldCheck className="h-6 w-6" />,
     points: [
-      "Real-time analytics",
-      "360-degree operator view",
-      "Automated oversight",
+      // "Real-time analytics",
+      // "360-degree operator view",
+      // "Automated oversight",
     ],
     image: amsImage,
   },
   {
     title: "Credit+",
     description:
-      "Credit+ allows subscribers to take an advance in Airtime, Data, Bundle Packs, and VAS subscriptions and pay later based on eligibility rules.",
+      "",
     button: "Explore Credit+",
     href: "/products/credit-plus",
     icon: <CreditCard className="h-6 w-6" />,
     points: [
-      "Subscriber scoring",
-      "Segmented eligibility",
-      "Flexible denominations",
+      // "Subscriber scoring",
+      // "Segmented eligibility",
+      // "Flexible denominations",
     ],
     image: creditImage,
   },
   {
     title: "Monitoring Solutions",
     description:
-      "Bryantel’s monitoring solutions give regulators and enterprise operators an intelligent centralized platform for visibility, reporting, and operational control.",
+      "",
     button: "Explore Monitoring",
     href: "/solutions",
     icon: <MonitorCog className="h-6 w-6" />,
     points: [
-      "Centralized dashboards",
-      "Operational visibility",
-      "Decision intelligence",
+      // "Centralized dashboards",
+      // "Operational visibility",
+      // "Decision intelligence",
     ],
     image: monitoringImage,
   },
@@ -407,7 +407,7 @@ function ProductsSection() {
         <SectionIntro
           dark
           title="Products"
-          subtitle="Explore our cutting-edge technology solutions designed for monitoring, analytics, credit innovation, and regulatory efficiency."
+          subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
         />
 
         <motion.div
@@ -465,77 +465,54 @@ function ProductsSection() {
   );
 }
 
-function OfferingsGrid({
-  title,
-  items,
-  accent,
-}: {
-  title: string;
-  items: string[];
-  accent: "blue" | "amber";
-}) {
-  const accentPill =
-    accent === "blue"
-      ? "from-blue-600 to-cyan-500 text-blue-950"
-      : "from-amber-500 to-yellow-600 text-amber-950";
+// function OfferingsGrid({
+//   title,
+//   items,
+//   accent,
+// }: {
+//   title: string;
+//   items: string[];
+//   accent: "blue" | "amber";
+// }) {
+//   const accentPill =
+//     accent === "blue"
+//       ? "from-blue-600 to-cyan-500 text-blue-950"
+//       : "from-amber-500 to-yellow-600 text-amber-950";
 
-  const dot = accent === "blue" ? "bg-blue-600" : "bg-amber-500";
+//   const dot = accent === "blue" ? "bg-blue-600" : "bg-amber-500";
 
-  return (
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.22 }}
-      whileHover={{ y: -6 }}
-      className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.35)]"
-    >
-      <div
-        className={`inline-flex rounded-full bg-gradient-to-r px-5 py-3 text-xs font-bold uppercase tracking-[0.28em] ${accentPill}`}
-      >
-        {title}
-      </div>
+//   return (
+//     <motion.div
+//       variants={fadeUp}
+//       initial="hidden"
+//       whileInView="show"
+//       viewport={{ once: true, amount: 0.22 }}
+//       whileHover={{ y: -6 }}
+//       className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.35)]"
+//     >
+//       <div
+//         className={`inline-flex rounded-full bg-gradient-to-r px-5 py-3 text-xs font-bold uppercase tracking-[0.28em] ${accentPill}`}
+//       >
+//         {title}
+//       </div>
 
-      <div className="mt-7 grid gap-5 sm:grid-cols-2">
-        {items.map((item) => (
-          <div
-            key={item}
-            className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="flex gap-3">
-              <div className={`mt-2 h-3 w-3 rounded-full ${dot}`} />
-              <p className="text-base leading-8 text-slate-700">{item}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
+//       <div className="mt-7 grid gap-5 sm:grid-cols-2">
+//         {items.map((item) => (
+//           <div
+//             key={item}
+//             className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+//           >
+//             <div className="flex gap-3">
+//               <div className={`mt-2 h-3 w-3 rounded-full ${dot}`} />
+//               <p className="text-base leading-8 text-slate-700">{item}</p>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </motion.div>
+//   );
+// }
 
-function OfferingsSection() {
-  return (
-    <section className="relative overflow-hidden bg-[#eef3fb] py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.08),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.08),_transparent_30%)]" />
-
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionIntro
-          title="AMS Offerings & Credit+ Offerings"
-          subtitle="Enterprise-grade capabilities that support regulators, operators, telecom ecosystems, and digital service innovation."
-        />
-
-        <div className="grid gap-8 lg:grid-cols-2">
-          <OfferingsGrid title="AMS Offerings" items={amsOfferings} accent="blue" />
-          <OfferingsGrid
-            title="Credit+ Offerings"
-            items={creditOfferings}
-            accent="amber"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function CertificationsSection() {
   const certifications = [
@@ -716,7 +693,7 @@ export default function BryantelHomepage() {
       <HeroSection />
       <AboutSection />
       <ProductsSection />
-      <OfferingsSection />
+     
       <CertificationsSection />
       <LinkCardsSection />
       <SiteFooter />

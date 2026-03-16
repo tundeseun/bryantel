@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-4 py-20 text-center">
             <h1 className="text-5xl font-semibold">Contact Us</h1>
             <p className="mt-4 text-xl text-slate-300">
-              We'd love to hear from you. Let's build something amazing together.
+             We'd love to hear from you. YES WE CAN, TOGETHER
             </p>
           </div>
         </section>
@@ -47,9 +47,9 @@ export default function ContactPage() {
               <MapPin className="mb-4 text-blue-400" size={32} />
               <h3 className="text-xl font-semibold">Office</h3>
               <p className="mt-2 text-slate-300">
-                123 Bryant Ave, Suite 500  
+                175 Kofo Abayomi Street, Victoria Island, Lagos, Nigeria. 
                 <br />
-                Technacity TX 75001
+                Eko Court Complex, Flat 21, Block C.12th Floor.
               </p>
             </div>
 
@@ -131,7 +131,9 @@ export default function ContactPage() {
               <div className="text-center">
                 <MapPin size={60} className="mx-auto text-blue-400" />
                 <h3 className="mt-4 text-xl font-semibold">
-                  Our Location
+                   175 Kofo Abayomi Street, Victoria Island, Lagos, Nigeria. 
+                <br />
+                Eko Court Complex, Flat 21, Block C.12th Floor.
                 </h3>
                 <p className="mt-2 text-slate-300">
                   Visit our office or schedule a consultation with our team.
