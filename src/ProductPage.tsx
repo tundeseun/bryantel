@@ -53,6 +53,7 @@ const allProducts: ProductItem[] = [
       "Underage Gambling Detection",
       "Addicted Gambling Detection",
       "Anti-Money Laundering (AML) Detection",
+      "Geofencing",
     ],
   },
   {
