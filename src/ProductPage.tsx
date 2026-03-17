@@ -19,8 +19,18 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 
 import amsImage from "./assets/ams-product.png";
-import creditImage from "./assets/credit-plus.png";
-import monitoringImage from "./assets/monitoring-system.png";
+// import creditImage from "./assets/credit-plus.png";
+// import monitoringImage from "./assets/monitoring-system.png";
+import aicompanion from "./assets/products/ai-companion.png";
+import aicalleridimage from "./assets/products/ai-caller-id.png";
+import eir from "./assets/products/eir.png"
+import bigdata from "./assets/products/big-data.png";
+import creditplus from "./assets/products/credit-plus.png";
+import mvno from "./assets/products/mvno.png";
+import vod from "./assets/products/vod.png";
+// Newly created images
+import vapImage from "./assets/products/vap.png";
+import messagingImage from "./assets/products/messaging.png";
 
 type ProductItem = {
   title: string;
@@ -53,7 +63,6 @@ const allProducts: ProductItem[] = [
       "Underage Gambling Detection",
       "Addicted Gambling Detection",
       "Anti-Money Laundering (AML) Detection",
-      "Geofencing",
     ],
   },
   {
@@ -62,7 +71,7 @@ const allProducts: ProductItem[] = [
     description:
       "VAP primarily provide a concentration point to limit the number of devices that will be directly connected to the operators. It eliminate the need for a Content Service Provider to maintain multiple system integration to each network operator. VAP support E2E process of service creation, operation and execution of VAS services, VAP works with CSP to ensure QTM in service delivery.",
     icon: Network,
-    image: monitoringImage,
+    image: vapImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
     features: [
       "Service Management",
@@ -79,7 +88,7 @@ const allProducts: ProductItem[] = [
     description:
       "We offer premium bulk SMS, MMS, voice and USSD services. Enjoy exceptional 24/7 support and send and receive messages with i-Cell’s trusted APIs.",
     icon: MessageSquareText,
-    image: monitoringImage,
+    image: messagingImage,
     accent: "from-sky-500/25 to-blue-400/10",
     features: [
       "Premium bulk SMS",
@@ -96,7 +105,7 @@ const allProducts: ProductItem[] = [
     description:
       "AI Companion is an out-of-the-box service for MNOs, designed to enhance telco self-care mobile apps with AI capabilities. Easy to integrate and deploy, this service instantly provides smart, contextual recommendations tailored to each user. Join us in transforming MNO apps into a powerful tool for revenue boost.",
     icon: Bot,
-    image: monitoringImage,
+    image: aicompanion,
     accent: "from-emerald-500/25 to-teal-400/10",
     features: [
       "Out-of-the-box service for MNOs",
@@ -112,7 +121,7 @@ const allProducts: ProductItem[] = [
     description:
       "Our Caller ID is an Add-on Core Service for MNOs with intelligent identification and privacy-conscious capabilities.",
     icon: PhoneCall,
-    image: monitoringImage,
+    image: aicalleridimage,
     accent: "from-amber-500/25 to-orange-400/10",
     features: [
       "Instantly identifies almost all local phone numbers",
@@ -128,7 +137,7 @@ const allProducts: ProductItem[] = [
     description:
       "The EIR registers IMEI numbers of all mobile devices and permits communications only to registered devices without legal restrictions, helping to block stolen, lost and unregistered devices.",
     icon: Cpu,
-    image: monitoringImage,
+    image: eir,
     accent: "from-rose-500/25 to-red-400/10",
     features: [
       "Manage EIR Equipment Lists",
@@ -150,7 +159,7 @@ const allProducts: ProductItem[] = [
     description:
       "We have established an enterprise-wide big data solution that gathers data directly from telco systems and structures it into intelligent reporting and mobility-related analytics.",
     icon: Database,
-    image: monitoringImage,
+    image: bigdata,
     accent: "from-cyan-500/25 to-sky-400/10",
     features: [
       "Gather data directly from telco network element CRM and charging platform",
@@ -166,7 +175,7 @@ const allProducts: ProductItem[] = [
     description:
       "A service that allows subscribers to borrow airtime and data bundles based on network activity, with repayment automatically recovered on subsequent recharges.",
     icon: Wallet,
-    image: creditImage,
+    image: creditplus,
     accent: "from-indigo-500/25 to-blue-400/10",
     features: [
       "Advance in form of airtime, data, bundle packs or VAS",
@@ -186,7 +195,7 @@ const allProducts: ProductItem[] = [
     description:
       "We are an MVNO enabler delivering consulting, service operations, technical blueprints, billing and loyalty platforms for virtual network operators.",
     icon: Globe,
-    image: monitoringImage,
+    image: mvno,
     accent: "from-purple-500/25 to-indigo-400/10",
     features: [
       "Consulting for market approach and technical solution",
@@ -202,7 +211,7 @@ const allProducts: ProductItem[] = [
     description:
       "Our VOD platform delivers video content management, user management, transaction support and administration tools through a modern digital entertainment ecosystem.",
     icon: PlaySquare,
-    image: monitoringImage,
+    image: vod,
     accent: "from-pink-500/25 to-purple-400/10",
     features: [
       "Content Security",
@@ -278,6 +287,7 @@ function ProductModal({
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white">
               <Icon size={22} />
             </div>
+
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                 {product.shortTitle}
