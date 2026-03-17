@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  ShieldCheck,
-  CreditCard,
-  MonitorCog,
+  // ShieldCheck,
+  // CreditCard,
+  // MonitorCog,
   Sparkles,
   Building2,
   Send,
@@ -16,9 +16,9 @@ import SiteFooter from "./SiteFooter";
 
 import heroImage from "./assets/hero-city.png";
 import aboutImage from "./assets/about-bryantel.png";
-import amsImage from "./assets/ams-product.png";
-import creditImage from "./assets/credit-plus.png";
-import monitoringImage from "./assets/monitoring-system.png";
+// import amsImage from "./assets/ams-product.png";
+// import creditImage from "./assets/credit-plus.png";
+// import monitoringImage from "./assets/monitoring-system.png";
 import certificationImage from "./assets/certification.jpg";
 import gsaSealImage from "./assets/compliance.jpg";
 import gsaLogoImage from "./assets/compliance_2.jpg";
@@ -34,15 +34,15 @@ type Slide = {
   cta2Link: string;
 };
 
-type ProductCard = {
-  title: string;
-  description: string;
-  button: string;
-  href: string;
-  icon: React.ReactNode;
-  points: string[];
-  image: string;
-};
+// type ProductCard = {
+//   title: string;
+//   description: string;
+//   button: string;
+//   href: string;
+//   icon: React.ReactNode;
+//   points: string[];
+//   image: string;
+// };
 
 const slides: Slide[] = [
   {
@@ -101,50 +101,50 @@ const slides: Slide[] = [
 //   "Flexible advance denominations determined by MNO and Partner",
 // ];
 
-const products: ProductCard[] = [
-  {
-    title: "Advanced Monitoring System",
-    description:
-       "",
-    button: "Explore AMS",
-    href: "/products/ams",
-    icon: <ShieldCheck className="h-6 w-6" />,
-    points: [
-      // "Real-time analytics",
-      // "360-degree operator view",
-      // "Automated oversight",
-    ],
-    image: amsImage,
-  },
-  {
-    title: "Credit+",
-    description:
-      "",
-    button: "Explore Credit+",
-    href: "/products/credit-plus",
-    icon: <CreditCard className="h-6 w-6" />,
-    points: [
-      // "Subscriber scoring",
-      // "Segmented eligibility",
-      // "Flexible denominations",
-    ],
-    image: creditImage,
-  },
-  {
-    title: "Monitoring Solutions",
-    description:
-      "",
-    button: "Explore Monitoring",
-    href: "/solutions",
-    icon: <MonitorCog className="h-6 w-6" />,
-    points: [
-      // "Centralized dashboards",
-      // "Operational visibility",
-      // "Decision intelligence",
-    ],
-    image: monitoringImage,
-  },
-];
+// const products: ProductCard[] = [
+//   {
+//     title: "Advanced Monitoring System",
+//     description:
+//        "",
+//     button: "Explore AMS",
+//     href: "/products/ams",
+//     icon: <ShieldCheck className="h-6 w-6" />,
+//     points: [
+//       // "Real-time analytics",
+//       // "360-degree operator view",
+//       // "Automated oversight",
+//     ],
+//     image: amsImage,
+//   },
+//   {
+//     title: "Credit+",
+//     description:
+//       "",
+//     button: "Explore Credit+",
+//     href: "/products/credit-plus",
+//     icon: <CreditCard className="h-6 w-6" />,
+//     points: [
+//       // "Subscriber scoring",
+//       // "Segmented eligibility",
+//       // "Flexible denominations",
+//     ],
+//     image: creditImage,
+//   },
+//   {
+//     title: "Monitoring Solutions",
+//     description:
+//       "",
+//     button: "Explore Monitoring",
+//     href: "/solutions",
+//     icon: <MonitorCog className="h-6 w-6" />,
+//     points: [
+//       // "Centralized dashboards",
+//       // "Operational visibility",
+//       // "Decision intelligence",
+//     ],
+//     image: monitoringImage,
+//   },
+// ];
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -384,86 +384,86 @@ function AboutSection() {
   );
 }
 
-function ProductVisual({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="relative h-56 w-full overflow-hidden rounded-[1.5rem]">
-      <img
-        src={src}
-        alt={alt}
-        className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,15,40,0.05),rgba(5,15,40,0.6))]" />
-    </div>
-  );
-}
+// function ProductVisual({ src, alt }: { src: string; alt: string }) {
+//   return (
+//     <div className="relative h-56 w-full overflow-hidden rounded-[1.5rem]">
+//       <img
+//         src={src}
+//         alt={alt}
+//         className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+//       />
+//       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,15,40,0.05),rgba(5,15,40,0.6))]" />
+//     </div>
+//   );
+// }
 
-function ProductsSection() {
-  return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#081849,#0a1d5c,#07163f)] py-20 text-white lg:py-24">
-      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.16),_transparent_35%)]" />
+// function ProductsSection() {
+//   return (
+//     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#081849,#0a1d5c,#07163f)] py-20 text-white lg:py-24">
+//       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.16),_transparent_35%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionIntro
-          dark
-          title="Products"
-          subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
-        />
+//       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+//         <SectionIntro
+//           dark
+//           title="Products"
+//           subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
+//         />
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.18 }}
-          className="grid gap-8 lg:grid-cols-3"
-        >
-          {products.map((product) => (
-            <motion.div
-              key={product.title}
-              variants={fadeUp}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.25 }}
-              className="group rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.65)] backdrop-blur-sm"
-            >
-              <ProductVisual src={product.image} alt={product.title} />
+//         <motion.div
+//           variants={stagger}
+//           initial="hidden"
+//           whileInView="show"
+//           viewport={{ once: true, amount: 0.18 }}
+//           className="grid gap-8 lg:grid-cols-3"
+//         >
+//           {products.map((product) => (
+//             <motion.div
+//               key={product.title}
+//               variants={fadeUp}
+//               whileHover={{ y: -10 }}
+//               transition={{ duration: 0.25 }}
+//               className="group rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.65)] backdrop-blur-sm"
+//             >
+//               <ProductVisual src={product.image} alt={product.title} />
 
-              <div className="mt-6 flex items-center gap-3">
-                <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 p-3 text-white shadow-lg shadow-blue-900/30">
-                  {product.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white">{product.title}</h3>
-              </div>
+//               <div className="mt-6 flex items-center gap-3">
+//                 <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 p-3 text-white shadow-lg shadow-blue-900/30">
+//                   {product.icon}
+//                 </div>
+//                 <h3 className="text-2xl font-bold text-white">{product.title}</h3>
+//               </div>
 
-              <p className="mt-4 leading-8 text-slate-100/95">
-                {product.description}
-              </p>
+//               <p className="mt-4 leading-8 text-slate-100/95">
+//                 {product.description}
+//               </p>
 
-              <div className="mt-6 space-y-3">
-                {product.points.map((point) => (
-                  <div
-                    key={point}
-                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 transition hover:bg-white/10"
-                  >
-                    <div className="mt-2 h-2 w-2 rounded-full bg-amber-400" />
-                    <p className="text-sm leading-7 text-slate-100/95">{point}</p>
-                  </div>
-                ))}
-              </div>
+//               <div className="mt-6 space-y-3">
+//                 {product.points.map((point) => (
+//                   <div
+//                     key={point}
+//                     className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 transition hover:bg-white/10"
+//                   >
+//                     <div className="mt-2 h-2 w-2 rounded-full bg-amber-400" />
+//                     <p className="text-sm leading-7 text-slate-100/95">{point}</p>
+//                   </div>
+//                 ))}
+//               </div>
 
-              <Link
-                to={product.href}
-                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition group-hover:translate-x-1"
-              >
-                {product.button}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
+//               <Link
+//                 to={product.href}
+//                 className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition group-hover:translate-x-1"
+//               >
+//                 {product.button}
+//                 <ArrowRight className="h-4 w-4" />
+//               </Link>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// }
 
 // function OfferingsGrid({
 //   title,
@@ -692,7 +692,7 @@ export default function BryantelHomepage() {
       <SiteHeader />
       <HeroSection />
       <AboutSection />
-      <ProductsSection />
+      {/* <ProductsSection /> */}
      
       <CertificationsSection />
       <LinkCardsSection />

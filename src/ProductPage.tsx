@@ -41,7 +41,19 @@ const allProducts: ProductItem[] = [
     icon: BarChart3,
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
-    features: [],
+    features: [
+      "Reports and Data Analysis",
+      "Dispute Handling for Stakers",
+      "Save OPEX and Resources",
+      "Automatic Tax Collection",
+      "Screen to Manage Lottery Operators",
+      "Lottery License Management",
+      "Centralized Monitoring System",
+      "360 degree View of Lottery Operation",
+      "Underage Gambling Detection",
+      "Addicted Gambling Detection",
+      "Anti-Money Laundering (AML) Detection",
+    ],
   },
   {
     title: "VAS Aggregator Platform (VAP)",
@@ -51,7 +63,14 @@ const allProducts: ProductItem[] = [
     icon: Network,
     image: monitoringImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
-    features: [],
+    features: [
+      "Service Management",
+      "User Management",
+      "Partner Management",
+      "Access Channels (SMS/MMS/USSD/APP)",
+      "Access Code Management",
+      "Direct Carrier Billing",
+    ],
   },
   {
     title: "Messaging",
@@ -61,7 +80,14 @@ const allProducts: ProductItem[] = [
     icon: MessageSquareText,
     image: monitoringImage,
     accent: "from-sky-500/25 to-blue-400/10",
-    features: [],
+    features: [
+      "Premium bulk SMS",
+      "MMS services",
+      "Voice services",
+      "USSD services",
+      "Exceptional 24/7 support",
+      "Trusted APIs",
+    ],
   },
   {
     title: "AI Companion",
@@ -71,67 +97,130 @@ const allProducts: ProductItem[] = [
     icon: Bot,
     image: monitoringImage,
     accent: "from-emerald-500/25 to-teal-400/10",
-    features: [],
+    features: [
+      "Out-of-the-box service for MNOs",
+      "Enhance telco self-care mobile apps with AI capabilities",
+      "Easy to integrate and deploy",
+      "Smart, contextual recommendations tailored to each user",
+      "Transform MNO apps into a powerful revenue tool",
+    ],
   },
   {
     title: "AI Caller ID",
     shortTitle: "Caller ID",
     description:
-      "Our Caller ID is an Add-on Core Service for MNOs with the following capabilities.",
+      "Our Caller ID is an Add-on Core Service for MNOs with intelligent identification and privacy-conscious capabilities.",
     icon: PhoneCall,
     image: monitoringImage,
     accent: "from-amber-500/25 to-orange-400/10",
-    features: [],
+    features: [
+      "Instantly identifies almost all local phone numbers",
+      "Works across personal, business, spam, mobile, landline, postpaid and prepaid numbers",
+      "Privacy-first GDPR-friendly solution",
+      "Creates real-time prediction about caller identity",
+      "Combines multiple data sources to create best-guess caller ID tag",
+    ],
   },
   {
     title: "Equipment Identity Register (EIR)",
     shortTitle: "EIR",
     description:
-      "The EIR registers IMEI numbers of all mobile devices, such as mobile phones, smart phones, hand-held computers, tablet PCs, modems, POS machines and more, which use national GSM networks for their electronic communications. The system only permits electronic communications to those mobile devices which are registered and have no legal obstacles for their usage in the country. IMEI Registry System blocks electronic communications of unregistered, stolen, lost mobile devices and provides tracking of illegal activities. The Equipment Identity Register (EIR) provides a direct interface to the IMEI DB.",
+      "The EIR registers IMEI numbers of all mobile devices and permits communications only to registered devices without legal restrictions, helping to block stolen, lost and unregistered devices.",
     icon: Cpu,
     image: monitoringImage,
     accent: "from-rose-500/25 to-red-400/10",
-    features: [],
+    features: [
+      "Manage EIR Equipment Lists",
+      "Query an IMEI Status",
+      "Bulk transfer equipment list data between EIR and local files",
+      "Support for bulk deletion of IMEIs",
+      "Run tests on EIR equipment lists",
+      "IMEI database management",
+      "Cloned handset user management",
+      "MSISDN to IMEI search feature",
+      "Fraud analysis tools",
+      "Audit and alarm log display",
+      "User account levels for authorization",
+    ],
   },
   {
     title: "Big Data",
     shortTitle: "Big Data",
     description:
-      "We have established an enterprise-wide big data solution that can gather data directly from telco network element CRM and charging platform etc. Our solution can work with or without pre-processed data and also structure data to provide intelligent reporting. The CDR extracted from the telco will be structured by our report system to provide mobility-related statistics, such as migration, commuting, urbanization and tourism. Our system can distinguish between high resolution data, such as signaling data, and call detail records (CDR).",
+      "We have established an enterprise-wide big data solution that gathers data directly from telco systems and structures it into intelligent reporting and mobility-related analytics.",
     icon: Database,
     image: monitoringImage,
     accent: "from-cyan-500/25 to-sky-400/10",
-    features: [],
+    features: [
+      "Gather data directly from telco network element CRM and charging platform",
+      "Works with or without pre-processed data",
+      "Structures data for intelligent reporting",
+      "Provides migration, commuting, urbanization and tourism insights",
+      "Distinguishes signaling data from call detail records (CDR)",
+    ],
   },
   {
     title: "Credit+",
     shortTitle: "Credit+",
     description:
-      "Is a service that allows subscribers borrow airtime and data bundles based on their activities on the network. Subscribers pay back the borrowed airtime/data upon their next recharge(s) until the full loan amount is recouped.",
+      "A service that allows subscribers to borrow airtime and data bundles based on network activity, with repayment automatically recovered on subsequent recharges.",
     icon: Wallet,
     image: creditImage,
     accent: "from-indigo-500/25 to-blue-400/10",
-    features: [],
+    features: [
+      "Advance in form of airtime, data, bundle packs or VAS",
+      "Subscriber credit scoring based on historical transactions and behavior",
+      "Customer segmentation for single or multiple advances",
+      "Different advance denominations supported",
+      "Supports airtime, data, mobile money and VAS loan types",
+      "Supports USSD, SMS, Web App and Mobile App channels",
+      "Multi-lingual capabilities",
+      "Push and pull loan channels supported",
+      "Gamification support to drive customer loyalty and service uptake",
+    ],
   },
   {
     title: "MVNO Services",
     shortTitle: "MVNO",
     description:
-      "We are MVNO enabler and we provide the following MVNO services.",
+      "We are an MVNO enabler delivering consulting, service operations, technical blueprints, billing and loyalty platforms for virtual network operators.",
     icon: Globe,
     image: monitoringImage,
     accent: "from-purple-500/25 to-indigo-400/10",
-    features: [],
+    features: [
+      "Consulting for market approach and technical solution",
+      "Service management and operational support",
+      "Cost-effective platform blueprints",
+      "Carrier-grade network and IT building blocks",
+      "Cloud-based billing and loyalty management",
+    ],
   },
   {
     title: "VOD Platform",
     shortTitle: "VOD",
     description:
-      "i-Cell is an innovation solution provider of VOD Platform. In connection with other subsystems our video content management system brings you content management services, users, transactions, and admin panel. Some of the features of this platform are as follows.",
+      "Our VOD platform delivers video content management, user management, transaction support and administration tools through a modern digital entertainment ecosystem.",
     icon: PlaySquare,
     image: monitoringImage,
     accent: "from-pink-500/25 to-purple-400/10",
-    features: [],
+    features: [
+      "Content Security",
+      "International banking gateway integration",
+      "Recommendation",
+      "Live streaming",
+      "Radio channels",
+      "TV Catch Up",
+      "Multi-profile",
+      "Parental Lock",
+      "ABR",
+      "Multilingual subtitles",
+      "Multiple audios",
+      "Bookmark",
+      "Favorites",
+      "Reminder",
+      "Rating",
+      "Search",
+    ],
   },
 ];
 
@@ -180,7 +269,7 @@ function ProductModal({
         onClick={onClose}
       />
 
-      <div className="relative z-10 max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/15 bg-[#091532] shadow-[0_30px_100px_rgba(0,0,0,0.55)]">
+      <div className="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-[28px] border border-white/15 bg-[#091532] shadow-[0_30px_100px_rgba(0,0,0,0.55)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(96,122,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_30%)]" />
 
         <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-4 md:px-7">
@@ -188,7 +277,6 @@ function ProductModal({
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white">
               <Icon size={22} />
             </div>
-
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                 {product.shortTitle}
@@ -210,7 +298,7 @@ function ProductModal({
         </div>
 
         <div className="relative max-h-[calc(90vh-80px)] overflow-y-auto px-5 py-5 md:px-7 md:py-6">
-          <div className="grid gap-6 lg:grid-cols-[320px,1fr]">
+          <div className="grid gap-6 lg:grid-cols-[340px,1fr]">
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
               <img
                 src={product.image}
@@ -221,34 +309,32 @@ function ProductModal({
 
             <div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h4 className="text-lg font-semibold text-white">Overview</h4>
+                <h4 className="text-lg font-semibold text-white">Description</h4>
                 <p className="mt-3 text-sm leading-7 text-slate-200 md:text-base">
                   {product.description}
                 </p>
               </div>
 
-              {product.features.length > 0 ? (
-                <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <h4 className="text-lg font-semibold text-white">Features</h4>
+              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <h4 className="text-lg font-semibold text-white">Features</h4>
 
-                  <div className="mt-4 grid gap-3 md:grid-cols-2">
-                    {product.features.map((feature, index) => (
-                      <div
-                        key={`${product.title}-modal-${index}`}
-                        className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                      >
-                        <CheckCircle2
-                          size={18}
-                          className="mt-0.5 shrink-0 text-emerald-300"
-                        />
-                        <span className="text-sm leading-6 text-slate-100">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                  {product.features.map((feature, index) => (
+                    <div
+                      key={`${product.title}-feature-${index}`}
+                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                    >
+                      <CheckCircle2
+                        size={18}
+                        className="mt-0.5 shrink-0 text-emerald-300"
+                      />
+                      <span className="text-sm leading-6 text-slate-100">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ) : null}
+              </div>
 
               <div className="mt-5 flex justify-end">
                 <button
@@ -274,11 +360,13 @@ function ProductCard({
   description,
   image,
   icon: Icon,
-  features,
   accent,
   onLearnMore,
   landscape = false,
-}: ProductItem & { onLearnMore: () => void; landscape?: boolean }) {
+}: Omit<ProductItem, "features"> & {
+  onLearnMore: () => void;
+  landscape?: boolean;
+}) {
   return (
     <div
       className={[
@@ -348,25 +436,6 @@ function ProductCard({
             {description}
           </p>
 
-          {features.length > 0 ? (
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {features.slice(0, landscape ? 4 : 5).map((feature, index) => (
-                <div
-                  key={`${title}-${index}`}
-                  className="flex items-start gap-2 rounded-lg border border-white/8 bg-white/6 px-3 py-2"
-                >
-                  <CheckCircle2
-                    size={16}
-                    className="mt-[2px] shrink-0 text-emerald-300"
-                  />
-                  <span className="text-sm leading-5 text-slate-100">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : null}
-
           <button
             type="button"
             onClick={onLearnMore}
@@ -424,7 +493,12 @@ export default function ProductPage() {
                     }
                   >
                     <ProductCard
-                      {...product}
+                      title={product.title}
+                      shortTitle={product.shortTitle}
+                      description={product.description}
+                      icon={product.icon}
+                      image={product.image}
+                      accent={product.accent}
                       landscape={shouldMakeLastLandscape}
                       onLearnMore={() => setSelectedProduct(product)}
                     />
