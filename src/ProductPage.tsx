@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
-
 import amsImage from "./assets/ams-product.png";
 // import creditImage from "./assets/credit-plus.png";
 // import monitoringImage from "./assets/monitoring-system.png";
