@@ -1,4 +1,3 @@
-// import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -9,6 +8,7 @@ import {
   Layers3,
   RadioTower,
   BadgeCheck,
+  BellRing,
 } from "lucide-react";
 
 import SiteHeader from "./SiteHeader";
@@ -130,20 +130,21 @@ function SectionIntro({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.35 }}
-      className="mx-auto mb-14 max-w-4xl text-center"
+      className="mx-auto mb-8 max-w-4xl text-center"
     >
       <div
-        className={`mb-4 inline-flex rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] shadow-sm ${
+        className={`mb-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] shadow-sm ${
           dark
             ? "border border-white/10 bg-white/12 text-blue-100"
             : "bg-blue-50 text-blue-700"
         }`}
       >
+        <BellRing size={12} />
         Bryantel
       </div>
 
       <h2
-        className={`text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${
+        className={`text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl ${
           dark ? "text-white" : "text-slate-900"
         }`}
       >
@@ -152,7 +153,7 @@ function SectionIntro({
 
       {subtitle && (
         <p
-          className={`mt-5 text-lg leading-9 ${
+          className={`mt-2 text-sm leading-7 md:text-base ${
             dark ? "text-blue-100/80" : "text-slate-600"
           }`}
         >
@@ -165,44 +166,66 @@ function SectionIntro({
 
 function AboutHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#eef3fb]">
-      <div className="relative h-[180px] sm:h-[220px] lg:h-[260px]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${aboutHeroImage})` }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,22,67,0.88),rgba(7,22,63,0.78),rgba(6,22,67,0.55))]" />
-        <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+    <section className="relative overflow-hidden bg-[#eef3fb]">
+      <div className="relative mx-auto max-w-7xl px-4 pt-2 pb-0 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)]">
+          <div className="relative min-h-[220px] sm:min-h-[240px] lg:min-h-[260px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${aboutHeroImage})` }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,22,67,0.88),rgba(7,22,63,0.78),rgba(6,22,67,0.56))]" />
+            <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.10),transparent_24%)]" />
 
-        <div className="relative mx-auto flex h-full max-w-7xl items-center px-4 lg:px-8">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="max-w-3xl text-white"
-          >
-            {/* <div className="mb-3 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-blue-100 backdrop-blur-sm">
-              About Us
-            </div> */}
+            <div className="relative mx-auto flex min-h-[220px] max-w-7xl items-center px-5 py-6 sm:min-h-[240px] sm:px-6 sm:py-8 lg:min-h-[260px] lg:px-10 lg:py-8">
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                animate="show"
+                className="max-w-3xl text-white"
+              >
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-blue-100 backdrop-blur-sm">
+                  <BellRing size={12} />
+                  About Bryantel
+                </div>
 
-            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              Our Story & Expertise
-            </h1>
+                <h1 className="mt-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+                  Our Story & Expertise
+                </h1>
 
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-blue-50/90 sm:text-base">
-              Driving innovation, credit intelligence, platform resilience, and
-              enterprise technology delivery with 26 years of industry
-              experience.
-            </p>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-blue-50/90 sm:text-base">
+                  Driving innovation, credit intelligence, platform resilience,
+                  and enterprise technology delivery with 26 years of industry
+                  experience.
+                </p>
 
-            <div className="mt-4 flex items-center gap-3 text-sm text-blue-100/90">
-              <Link to="/" className="transition hover:text-white">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-white">About Us</span>
+                <div className="mt-3 flex items-center gap-3 text-sm text-blue-100/90">
+                  <Link to="/" className="transition hover:text-white">
+                    Home
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">About Us</span>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+
+            <svg
+              className="absolute bottom-0 left-0 w-full"
+              viewBox="0 0 1440 90"
+              fill="none"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0 58C146 82 319 84 486 70C659 54 792 17 972 9C1150 1 1287 20 1440 45V90H0V58Z"
+                fill="rgba(255,255,255,0.96)"
+              />
+              <path
+                d="M0 70C178 56 334 60 500 71C688 84 854 95 1040 90C1188 86 1313 77 1440 63V90H0V70Z"
+                fill="rgba(242,246,252,0.92)"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -211,7 +234,7 @@ function AboutHero() {
 
 function StorySection() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff,#eef3fb,#f8fbff)] py-20 lg:py-24">
+    <section className="relative -mt-10 overflow-hidden bg-[linear-gradient(180deg,#f8fbff,#eef3fb,#f8fbff)] py-10 lg:py-12">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.10),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.08),_transparent_24%)]" />
       <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(37,99,235,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.04)_1px,transparent_1px)] [background-size:88px_88px]" />
 
@@ -236,7 +259,7 @@ function StorySection() {
                 26 Years of Experience
               </div>
 
-              <div className="space-y-6 text-lg leading-9 text-slate-700">
+              <div className="space-y-6 text-base leading-8 text-slate-700 lg:text-lg lg:leading-9">
                 <p>
                   We are service providers and consultants with 26 years of
                   experience to multinational companies and top world technology
@@ -279,6 +302,7 @@ function StorySection() {
             <img
               src={aboutTeamImage}
               alt="Bryantel management team"
+              loading="lazy"
               className="h-full min-h-[440px] w-full object-cover transition duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,73,0.04),rgba(8,24,73,0.12),rgba(6,19,56,0.46))]" />
@@ -489,6 +513,7 @@ function CertificationsSection() {
                   <img
                     src={item.image}
                     alt={item.alt}
+                    loading="lazy"
                     className="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
                   />
                 </motion.div>

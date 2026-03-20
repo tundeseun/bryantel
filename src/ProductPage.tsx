@@ -1,33 +1,31 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
   BarChart3,
-  CheckCircle2,
-  Globe,
   BellRing,
   Bot,
-  PhoneCall,
+  CheckCircle2,
   Cpu,
   Database,
-  Wallet,
-  Network,
-  PlaySquare,
+  Globe,
   MessageSquareText,
+  Network,
+  PhoneCall,
+  PlaySquare,
+  Wallet,
   X,
 } from "lucide-react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+
 import amsImage from "./assets/ams-product.png";
-// import creditImage from "./assets/credit-plus.png";
-// import monitoringImage from "./assets/monitoring-system.png";
 import aicompanion from "./assets/products/ai-companion.png";
 import aicalleridimage from "./assets/products/ai-caller-id.png";
-import eir from "./assets/products/eir.png"
+import eir from "./assets/products/eir.png";
 import bigdata from "./assets/products/big-data.png";
 import creditplus from "./assets/products/credit-plus.png";
 import mvno from "./assets/products/mvno.png";
 import vod from "./assets/products/vod.png";
-// Newly created images
 import vapImage from "./assets/products/vap.png";
 import messagingImage from "./assets/products/messaging.png";
 
@@ -46,47 +44,47 @@ const allProducts: ProductItem[] = [
     title: "Advanced Monitoring System",
     shortTitle: "AMS",
     description:
-      "AMS is a gaming industry monitoring platform that provides real time analytic solution based on big data and supports the regulation of gaming activities, AMS provides regulators 360-degree view of gaming operator sales and players’ activities.",
+      "AMS is a gaming industry monitoring platform that delivers real-time analytics powered by big data. It enables regulators to oversee gaming activities, monitor operator sales, and gain a 360-degree view of player and operator behavior.",
     icon: BarChart3,
     image: amsImage,
     accent: "from-blue-500/25 to-cyan-400/10",
     features: [
-      "Reports and Data Analysis",
-      "Dispute Handling for Stakers",
-      "Save OPEX and Resources",
-      "Automatic Tax Collection",
-      "Screen to Manage Lottery Operators",
-      "Lottery License Management",
-      "Centralized Monitoring System",
-      "360 degree View of Lottery Operation",
-      "Underage Gambling Detection",
-      "Addicted Gambling Detection",
-      "Anti-Money Laundering (AML) Detection",
-      "Geofencing",
+      "Real-time reports and analytics",
+      "Dispute handling for stakers",
+      "Operational cost reduction",
+      "Automatic tax collection",
+      "Lottery operator management",
+      "Lottery license management",
+      "Centralized monitoring system",
+      "360-degree operational visibility",
+      "Underage gambling detection",
+      "Addiction pattern detection",
+      "AML detection support",
+      "Geofencing capabilities",
     ],
   },
   {
-    title: "VAS Aggregator Platform (VAP)",
+    title: "VAS Aggregator Platform",
     shortTitle: "VAP",
     description:
-      "VAP primarily provide a concentration point to limit the number of devices that will be directly connected to the operators. It eliminate the need for a Content Service Provider to maintain multiple system integration to each network operator. VAP support E2E process of service creation, operation and execution of VAS services, VAP works with CSP to ensure QTM in service delivery.",
+      "VAP provides a centralized integration layer that reduces the number of direct connections required between content service providers and network operators. It supports the end-to-end lifecycle of value-added services, from creation and management to delivery and execution.",
     icon: Network,
     image: vapImage,
     accent: "from-violet-500/25 to-fuchsia-400/10",
     features: [
-      "Service Management",
-      "User Management",
-      "Partner Management",
-      "Access Channels (SMS/MMS/USSD/APP)",
-      "Access Code Management",
-      "Direct Carrier Billing",
+      "Service management",
+      "User management",
+      "Partner management",
+      "Multi-channel access: SMS, MMS, USSD, App",
+      "Access code management",
+      "Direct carrier billing",
     ],
   },
   {
     title: "Messaging",
     shortTitle: "Messaging",
     description:
-      "We offer premium bulk SMS, MMS, voice and USSD services. Enjoy exceptional 24/7 support and send and receive messages with i-Cell’s trusted APIs.",
+      "We deliver premium bulk SMS, MMS, voice, and USSD services backed by dependable APIs and responsive support. Our messaging solutions are built for speed, reliability, and enterprise-scale communication.",
     icon: MessageSquareText,
     image: messagingImage,
     accent: "from-sky-500/25 to-blue-400/10",
@@ -95,113 +93,113 @@ const allProducts: ProductItem[] = [
       "MMS services",
       "Voice services",
       "USSD services",
-      "Exceptional 24/7 support",
-      "Trusted APIs",
+      "24/7 support",
+      "Trusted API integrations",
     ],
   },
   {
     title: "AI Companion",
     shortTitle: "AI",
     description:
-      "AI Companion is an out-of-the-box service for MNOs, designed to enhance telco self-care mobile apps with AI capabilities. Easy to integrate and deploy, this service instantly provides smart, contextual recommendations tailored to each user. Join us in transforming MNO apps into a powerful tool for revenue boost.",
+      "AI Companion is an out-of-the-box solution for mobile network operators that enhances self-care mobile apps with AI-driven capabilities. It provides intelligent recommendations tailored to individual users and helps transform apps into stronger engagement and revenue channels.",
     icon: Bot,
     image: aicompanion,
     accent: "from-emerald-500/25 to-teal-400/10",
     features: [
-      "Out-of-the-box service for MNOs",
-      "Enhance telco self-care mobile apps with AI capabilities",
-      "Easy to integrate and deploy",
-      "Smart, contextual recommendations tailored to each user",
-      "Transform MNO apps into a powerful revenue tool",
+      "Ready-to-deploy MNO solution",
+      "AI enhancement for self-care apps",
+      "Fast integration and rollout",
+      "Contextual user recommendations",
+      "Revenue growth enablement",
     ],
   },
   {
     title: "AI Caller ID",
     shortTitle: "Caller ID",
     description:
-      "Our Caller ID is an Add-on Core Service for MNOs with intelligent identification and privacy-conscious capabilities.",
+      "AI Caller ID is an intelligent add-on service for MNOs that helps identify incoming calls while preserving user privacy. It combines multiple data sources to generate accurate, real-time caller identity predictions.",
     icon: PhoneCall,
     image: aicalleridimage,
     accent: "from-amber-500/25 to-orange-400/10",
     features: [
-      "Instantly identifies almost all local phone numbers",
-      "Works across personal, business, spam, mobile, landline, postpaid and prepaid numbers",
-      "Privacy-first GDPR-friendly solution",
-      "Creates real-time prediction about caller identity",
-      "Combines multiple data sources to create best-guess caller ID tag",
+      "Identifies most local numbers instantly",
+      "Supports business, spam, mobile, landline, prepaid and postpaid numbers",
+      "Privacy-first and GDPR-friendly",
+      "Real-time caller identity prediction",
+      "Multi-source identity tagging",
     ],
   },
   {
-    title: "Equipment Identity Register (EIR)",
+    title: "Equipment Identity Register",
     shortTitle: "EIR",
     description:
-      "The EIR registers IMEI numbers of all mobile devices and permits communications only to registered devices without legal restrictions, helping to block stolen, lost and unregistered devices.",
+      "The EIR manages IMEI records for mobile devices and restricts network access to devices that are authorized and compliant. It supports the control of stolen, lost, cloned, and unregistered devices.",
     icon: Cpu,
     image: eir,
     accent: "from-rose-500/25 to-red-400/10",
     features: [
-      "Manage EIR Equipment Lists",
-      "Query an IMEI Status",
-      "Bulk transfer equipment list data between EIR and local files",
-      "Support for bulk deletion of IMEIs",
-      "Run tests on EIR equipment lists",
+      "Manage equipment lists",
+      "IMEI status queries",
+      "Bulk data transfer between EIR and local files",
+      "Bulk deletion support",
+      "Equipment list testing",
       "IMEI database management",
-      "Cloned handset user management",
-      "MSISDN to IMEI search feature",
+      "Cloned handset monitoring",
+      "MSISDN-to-IMEI search",
       "Fraud analysis tools",
-      "Audit and alarm log display",
-      "User account levels for authorization",
+      "Audit and alarm logs",
+      "Role-based authorization",
     ],
   },
   {
     title: "Big Data",
     shortTitle: "Big Data",
     description:
-      "We have established an enterprise-wide big data solution that gathers data directly from telco systems and structures it into intelligent reporting and mobility-related analytics.",
+      "Our enterprise big data solution captures data directly from telecom systems and transforms it into structured intelligence for reporting, mobility insight, and strategic decision-making.",
     icon: Database,
     image: bigdata,
     accent: "from-cyan-500/25 to-sky-400/10",
     features: [
-      "Gather data directly from telco network element CRM and charging platform",
-      "Works with or without pre-processed data",
-      "Structures data for intelligent reporting",
-      "Provides migration, commuting, urbanization and tourism insights",
-      "Distinguishes signaling data from call detail records (CDR)",
+      "Direct ingestion from telco systems",
+      "Works with raw or pre-processed data",
+      "Structured intelligent reporting",
+      "Mobility and tourism analytics",
+      "CDR and signaling data distinction",
     ],
   },
   {
     title: "Credit+",
     shortTitle: "Credit+",
     description:
-      "A service that allows subscribers to borrow airtime and data bundles based on network activity, with repayment automatically recovered on subsequent recharges.",
+      "Credit+ enables subscribers to borrow airtime, data, and other service bundles based on usage behavior and network activity, with automated repayment on subsequent recharges.",
     icon: Wallet,
     image: creditplus,
     accent: "from-indigo-500/25 to-blue-400/10",
     features: [
-      "Advance in form of airtime, data, bundle packs or VAS",
-      "Subscriber credit scoring based on historical transactions and behavior",
-      "Customer segmentation for single or multiple advances",
-      "Different advance denominations supported",
-      "Supports airtime, data, mobile money and VAS loan types",
-      "Supports USSD, SMS, Web App and Mobile App channels",
-      "Multi-lingual capabilities",
-      "Push and pull loan channels supported",
-      "Gamification support to drive customer loyalty and service uptake",
+      "Airtime, data, bundle and VAS advances",
+      "Subscriber credit scoring",
+      "Customer segmentation",
+      "Flexible advance denominations",
+      "Support for airtime, data, mobile money and VAS loan types",
+      "USSD, SMS, Web App and Mobile App channels",
+      "Multi-language support",
+      "Push and pull channels",
+      "Gamification support",
     ],
   },
   {
     title: "MVNO Services",
     shortTitle: "MVNO",
     description:
-      "We are an MVNO enabler delivering consulting, service operations, technical blueprints, billing and loyalty platforms for virtual network operators.",
+      "We support MVNOs with consulting, technical design, service operations, billing, and loyalty platforms. Our solutions help virtual network operators launch and scale efficiently.",
     icon: Globe,
     image: mvno,
     accent: "from-purple-500/25 to-indigo-400/10",
     features: [
-      "Consulting for market approach and technical solution",
-      "Service management and operational support",
-      "Cost-effective platform blueprints",
-      "Carrier-grade network and IT building blocks",
+      "Go-to-market consulting",
+      "Operational support",
+      "Platform blueprints",
+      "Carrier-grade network and IT components",
       "Cloud-based billing and loyalty management",
     ],
   },
@@ -209,30 +207,35 @@ const allProducts: ProductItem[] = [
     title: "VOD Platform",
     shortTitle: "VOD",
     description:
-      "Our VOD platform delivers video content management, user management, transaction support and administration tools through a modern digital entertainment ecosystem.",
+      "Our VOD platform provides content management, user administration, transaction support, and modern entertainment delivery features through a scalable digital media ecosystem.",
     icon: PlaySquare,
     image: vod,
     accent: "from-pink-500/25 to-purple-400/10",
     features: [
-      "Content Security",
-      "International banking gateway integration",
-      "Recommendation",
+      "Content security",
+      "International payment gateway integration",
+      "Recommendation engine",
       "Live streaming",
       "Radio channels",
-      "TV Catch Up",
-      "Multi-profile",
-      "Parental Lock",
-      "ABR",
+      "TV catch-up",
+      "Multi-profile support",
+      "Parental lock",
+      "ABR streaming",
       "Multilingual subtitles",
-      "Multiple audios",
-      "Bookmark",
+      "Multiple audio tracks",
+      "Bookmarking",
       "Favorites",
-      "Reminder",
-      "Rating",
+      "Reminders",
+      "Ratings",
       "Search",
     ],
   },
 ];
+
+function preloadImage(src: string) {
+  const img = new Image();
+  img.src = src;
+}
 
 function SectionHeading({
   title,
@@ -243,20 +246,56 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-200 backdrop-blur-md">
-        <BellRing size={14} />
+      <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-200 backdrop-blur-md">
+        <BellRing size={12} />
         Bryantel Solutions
       </div>
 
-      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white md:text-4xl">
         {title}
       </h2>
 
       {subtitle ? (
-        <p className="mt-4 text-base leading-8 text-slate-200 md:text-xl">
+        <p className="mt-2 text-sm leading-6 text-slate-300 md:text-base">
           {subtitle}
         </p>
       ) : null}
+    </div>
+  );
+}
+
+function OptimizedImage({
+  src,
+  alt,
+  className,
+  eager = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  eager?: boolean;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative overflow-hidden">
+      {!loaded && (
+        <div className="absolute inset-0 animate-pulse bg-white/10" />
+      )}
+
+      <img
+        src={src}
+        alt={alt}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : "auto"}
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        className={[
+          className ?? "",
+          "transition duration-500",
+          loaded ? "opacity-100" : "opacity-0",
+        ].join(" ")}
+      />
     </div>
   );
 }
@@ -268,12 +307,34 @@ function ProductModal({
   product: ProductItem | null;
   onClose: () => void;
 }) {
+  useEffect(() => {
+    if (!product) return;
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [product, onClose]);
+
   if (!product) return null;
 
   const Icon = product.icon;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label={product.title}
+    >
       <div
         className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
         onClick={onClose}
@@ -311,9 +372,10 @@ function ProductModal({
         <div className="relative max-h-[calc(90vh-80px)] overflow-y-auto px-5 py-5 md:px-7 md:py-6">
           <div className="grid gap-6 lg:grid-cols-[340px,1fr]">
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-              <img
+              <OptimizedImage
                 src={product.image}
                 alt={product.title}
+                eager
                 className="h-64 w-full object-cover lg:h-full"
               />
             </div>
@@ -327,7 +389,7 @@ function ProductModal({
               </div>
 
               <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h4 className="text-lg font-semibold text-white">Features</h4>
+                <h4 className="text-lg font-semibold text-white">Key Features</h4>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
                   {product.features.map((feature, index) => (
@@ -372,12 +434,17 @@ function ProductCard({
   image,
   icon: Icon,
   accent,
+  features,
   onLearnMore,
   landscape = false,
-}: Omit<ProductItem, "features"> & {
+  eagerImage = false,
+}: ProductItem & {
   onLearnMore: () => void;
   landscape?: boolean;
+  eagerImage?: boolean;
 }) {
+  const previewFeatures = features.slice(0, 3);
+
   return (
     <div
       className={[
@@ -408,12 +475,13 @@ function ProductCard({
           </div>
 
           <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <img
+            <OptimizedImage
               src={image}
               alt={title}
+              eager={eagerImage}
               className={[
-                "w-full object-cover transition duration-500 group-hover:scale-[1.03]",
-                landscape ? "h-64 lg:h-[280px]" : "h-40",
+                "w-full object-cover group-hover:scale-[1.03]",
+                landscape ? "h-64 lg:h-[280px]" : "h-48",
               ].join(" ")}
             />
           </div>
@@ -441,11 +509,22 @@ function ProductCard({
               "mt-3 text-slate-200",
               landscape
                 ? "line-clamp-4 text-base leading-7"
-                : "line-clamp-5 text-sm leading-6",
+                : "line-clamp-4 text-sm leading-6",
             ].join(" ")}
           >
             {description}
           </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {previewFeatures.map((feature, index) => (
+              <span
+                key={`${title}-preview-${index}`}
+                className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs text-slate-100"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
 
           <button
             type="button"
@@ -468,6 +547,11 @@ export default function ProductPage() {
 
   const products = useMemo(() => allProducts, []);
 
+  useEffect(() => {
+    const firstVisibleImages = products.slice(0, 3).map((item) => item.image);
+    firstVisibleImages.forEach(preloadImage);
+  }, [products]);
+
   return (
     <div className="min-h-screen bg-[#07122f] text-white">
       <SiteHeader />
@@ -478,16 +562,16 @@ export default function ProductPage() {
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(125deg,transparent_0%,rgba(255,255,255,0.08)_40%,transparent_100%)]" />
 
         <section className="relative border-b border-white/10">
-          <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 pt-6 pb-3 md:px-6 md:pt-8 md:pb-4 lg:px-8 lg:pt-8 lg:pb-4">
             <SectionHeading
               title="Bryantel Products & Solutions"
-              subtitle="Explore our cutting-edge technology solutions designed for enhancing operational efficiency, accelerating digital transformation, and leveraging AI-native approaches to drive growth."
+              subtitle="Explore our enterprise technology solutions built to improve operational efficiency, accelerate digital transformation, and unlock scalable growth."
             />
           </div>
         </section>
 
-        <section className="relative border-b border-white/10">
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8 lg:py-20">
+        <section className="relative">
+          <div className="mx-auto max-w-7xl px-4 pt-1 pb-10 md:px-6 md:pt-2 md:pb-12 lg:px-8 lg:pt-2 lg:pb-14">
             <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
               {products.map((product, index) => {
                 const isLast = index === products.length - 1;
@@ -504,12 +588,8 @@ export default function ProductPage() {
                     }
                   >
                     <ProductCard
-                      title={product.title}
-                      shortTitle={product.shortTitle}
-                      description={product.description}
-                      icon={product.icon}
-                      image={product.image}
-                      accent={product.accent}
+                      {...product}
+                      eagerImage={index < 3}
                       landscape={shouldMakeLastLandscape}
                       onLearnMore={() => setSelectedProduct(product)}
                     />
