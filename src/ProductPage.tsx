@@ -234,7 +234,32 @@ const allProducts: ProductItem[] = [
 
 function preloadImage(src: string) {
   const img = new Image();
+  img.decoding = "async";
   img.src = src;
+}
+
+function addPreloadLinks(images: string[]) {
+  const appended: HTMLLinkElement[] = [];
+
+  images.forEach((src) => {
+    const existing = document.head.querySelector(`link[rel="preload"][href="${src}"]`);
+    if (existing) return;
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = src;
+    document.head.appendChild(link);
+    appended.push(link);
+  });
+
+  return () => {
+    appended.forEach((link) => {
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    });
+  };
 }
 
 function SectionHeading({
@@ -268,32 +293,29 @@ function OptimizedImage({
   src,
   alt,
   className,
-  eager = false,
+  priority = "auto",
 }: {
   src: string;
   alt: string;
   className?: string;
-  eager?: boolean;
+  priority?: "high" | "auto" | "low";
 }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative overflow-hidden">
-      {!loaded && (
-        <div className="absolute inset-0 animate-pulse bg-white/10" />
-      )}
+    <div className="relative h-full w-full overflow-hidden bg-white/5">
+      {!loaded && <div className="absolute inset-0 animate-pulse bg-white/10" />}
 
       <img
         src={src}
         alt={alt}
-        loading={eager ? "eager" : "lazy"}
-        fetchPriority={eager ? "high" : "auto"}
+        loading="eager"
+        fetchPriority={priority}
         decoding="async"
         onLoad={() => setLoaded(true)}
         className={[
           className ?? "",
-          "transition duration-500",
-          loaded ? "opacity-100" : "opacity-0",
+          "relative z-10 h-full w-full object-cover",
         ].join(" ")}
       />
     </div>
@@ -375,7 +397,7 @@ function ProductModal({
               <OptimizedImage
                 src={product.image}
                 alt={product.title}
-                eager
+                priority="high"
                 className="h-64 w-full object-cover lg:h-full"
               />
             </div>
@@ -434,17 +456,14 @@ function ProductCard({
   image,
   icon: Icon,
   accent,
-  features,
   onLearnMore,
   landscape = false,
-  eagerImage = false,
-}: ProductItem & {
+  priority = "auto",
+}: Omit<ProductItem, "features"> & {
   onLearnMore: () => void;
   landscape?: boolean;
-  eagerImage?: boolean;
+  priority?: "high" | "auto" | "low";
 }) {
-  const previewFeatures = features.slice(0, 3);
-
   return (
     <div
       className={[
@@ -478,9 +497,9 @@ function ProductCard({
             <OptimizedImage
               src={image}
               alt={title}
-              eager={eagerImage}
+              priority={priority}
               className={[
-                "w-full object-cover group-hover:scale-[1.03]",
+                "w-full object-cover transition duration-500 group-hover:scale-[1.03]",
                 landscape ? "h-64 lg:h-[280px]" : "h-48",
               ].join(" ")}
             />
@@ -515,17 +534,6 @@ function ProductCard({
             {description}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {previewFeatures.map((feature, index) => (
-              <span
-                key={`${title}-preview-${index}`}
-                className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs text-slate-100"
-              >
-                {feature}
-              </span>
-            ))}
-          </div>
-
           <button
             type="button"
             onClick={onLearnMore}
@@ -548,8 +556,11 @@ export default function ProductPage() {
   const products = useMemo(() => allProducts, []);
 
   useEffect(() => {
-    const firstVisibleImages = products.slice(0, 3).map((item) => item.image);
-    firstVisibleImages.forEach(preloadImage);
+    const imageSources = products.map((item) => item.image);
+    imageSources.forEach(preloadImage);
+
+    const cleanup = addPreloadLinks(imageSources);
+    return cleanup;
   }, [products]);
 
   return (
@@ -588,9 +599,14 @@ export default function ProductPage() {
                     }
                   >
                     <ProductCard
-                      {...product}
-                      eagerImage={index < 3}
+                      title={product.title}
+                      shortTitle={product.shortTitle}
+                      description={product.description}
+                      icon={product.icon}
+                      image={product.image}
+                      accent={product.accent}
                       landscape={shouldMakeLastLandscape}
+                      priority={index < 6 ? "high" : "auto"}
                       onLearnMore={() => setSelectedProduct(product)}
                     />
                   </div>
@@ -605,7 +621,7 @@ export default function ProductPage() {
 
       <ProductModal
         product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        onClose={() => setSelectedProduct(null)} 
       />
     </div>
   );
