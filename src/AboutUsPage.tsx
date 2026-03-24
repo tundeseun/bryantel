@@ -47,11 +47,11 @@ const deliverables = [
     title: "Robust Platform",
     icon: <RadioTower className="h-6 w-6" />,
     points: [
-      "Speed of advance via channels such as USSD, SMS, IVR, apps, subscriptions, and other digital touchpoints.",
-      "Automated recovery and seamless integration into Telco infrastructure.",
-      "Highly experienced support team with strong Telco protocol, IN, and integration expertise.",
+      "Automated recovery and seamless integration.",
+      "Highly experienced support team.",
       "System monitoring and responsive customer support for tickets and operational issues.",
       "Modular development approach that enables agility, resilience, and scalability.",
+      // "Modular development approach that enables agility, resilience, and scalability.",
     ],
   },
   {
@@ -59,9 +59,9 @@ const deliverables = [
     title: "Customer Segmentation",
     icon: <Layers3 className="h-6 w-6" />,
     points: [
-      "Using Telco and customer data, we develop credit solutions tailored to each market.",
-      "We define credit limits based on subscriber behaviour, usage patterns, and performance signals.",
-      "We continuously improve and enhance products in response to the Telco’s competitive environment.",
+      "Using customer data, we develop solutions tailored to each market.",
+      "We define offering based on subscriber behaviour, usage patterns, and performance signals.",
+      "We continuously improve and enhance products in response to the competitive environment.",
     ],
   },
   {
@@ -69,9 +69,9 @@ const deliverables = [
     title: "Customer Value Management",
     icon: <ShieldCheck className="h-6 w-6" />,
     points: [
-      "In collaboration with the Telco, we derive insights from analysis, customer behaviour, and market intelligence.",
+      "In collaboration with our partners, we derive insights from analysis, customer behaviour, and market intelligence.",
       "We design product strategies, define feature priorities, and develop practical roadmaps.",
-      "We work closely with multiple Telco teams to deliver maximum customer value and stronger business returns.",
+      "We work closely with multiple teams to deliver maximum customer value and stronger business returns",
     ],
   },
   {
@@ -86,16 +86,16 @@ const deliverables = [
   },
 ];
 
-const scoringPoints = [
-  "We develop scores from customers’ transactional data, business rules, and defined qualification criteria.",
-  "We begin with application scores based on what the available data says a customer should qualify for.",
-  "We then move to behavioural scores based on how customers use and repay credit products over time.",
-  "Qualification, risk, and in some cases pricing can be adjusted based on observed behaviour.",
-  "This supports the creation of scoring segments that enable Customer Value Management teams to deliver the right products, such as Airtime, Data, or Bundled Packages, to the right customers.",
-  "Scoring can be real-time using CDRs and other parameters at each advance request, enabling dynamic qualification.",
-  "Scoring can also be static, where qualification is set for a defined period such as a week or month.",
-  "Updates to scoring logic can be manual or automated based on agreed business rules.",
-];
+// const scoringPoints = [
+//   "We develop scores from customers’ transactional data, business rules, and defined qualification criteria.",
+//   "We begin with application scores based on what the available data says a customer should qualify for.",
+//   "We then move to behavioural scores based on how customers use and repay credit products over time.",
+//   "Qualification, risk, and in some cases pricing can be adjusted based on observed behaviour.",
+//   "This supports the creation of scoring segments that enable Customer Value Management teams to deliver the right products, such as Airtime, Data, or Bundled Packages, to the right customers.",
+//   "Scoring can be real-time using CDRs and other parameters at each advance request, enabling dynamic qualification.",
+//   "Scoring can also be static, where qualification is set for a defined period such as a week or month.",
+//   "Updates to scoring logic can be manual or automated based on agreed business rules.",
+// ];
 
 const certifications = [
   {
@@ -385,68 +385,68 @@ function DeliverSection() {
   );
 }
 
-function ScoringSection() {
-  return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef3fb,#f8fbff)] py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.08),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(245,158,11,0.07),_transparent_26%)]" />
+// function ScoringSection() {
+//   return (
+//     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef3fb,#f8fbff)] py-20 lg:py-24">
+//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.08),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(245,158,11,0.07),_transparent_26%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionIntro
-          title="Scoring Approaches"
-          subtitle="Our scoring models are built to support informed decisions, responsive credit management, and better customer value delivery."
-        />
+//       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+//         <SectionIntro
+//           title="Scoring Approaches"
+//           subtitle="Our scoring models are built to support informed decisions, responsive credit management, and better customer value delivery."
+//         />
 
-        <div className="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr]">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.22 }}
-            className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.28)]"
-          >
-            <div className="space-y-4">
-              {scoringPoints.map((point) => (
-                <div key={point} className="flex items-start gap-3">
-                  <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600" />
-                  <p className="text-base leading-8 text-slate-700">{point}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+//         <div className="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+//           <motion.div
+//             variants={fadeUp}
+//             initial="hidden"
+//             whileInView="show"
+//             viewport={{ once: true, amount: 0.22 }}
+//             className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.28)]"
+//           >
+//             <div className="space-y-4">
+//               {scoringPoints.map((point) => (
+//                 <div key={point} className="flex items-start gap-3">
+//                   <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600" />
+//                   <p className="text-base leading-8 text-slate-700">{point}</p>
+//                 </div>
+//               ))}
+//             </div>
+//           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.22 }}
-            className="rounded-[2rem] border border-blue-100 bg-[linear-gradient(135deg,#081849,#0a1d5c,#07163f)] p-8 text-white shadow-[0_22px_70px_-32px_rgba(15,23,42,0.38)]"
-          >
-            <div className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-blue-100">
-              Decision Intelligence
-            </div>
+//           <motion.div
+//             variants={fadeUp}
+//             initial="hidden"
+//             whileInView="show"
+//             viewport={{ once: true, amount: 0.22 }}
+//             className="rounded-[2rem] border border-blue-100 bg-[linear-gradient(135deg,#081849,#0a1d5c,#07163f)] p-8 text-white shadow-[0_22px_70px_-32px_rgba(15,23,42,0.38)]"
+//           >
+//             <div className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-blue-100">
+//               Decision Intelligence
+//             </div>
 
-            <h3 className="mt-6 text-3xl font-bold leading-tight">
-              Dynamic and Static Scoring Options for Flexible Credit Operations
-            </h3>
+//             <h3 className="mt-6 text-3xl font-bold leading-tight">
+//               Dynamic and Static Scoring Options for Flexible Credit Operations
+//             </h3>
 
-            <p className="mt-5 leading-8 text-blue-100/85">
-              Whether qualification is evaluated in real time at each request or
-              assigned for a defined period, our scoring architecture supports
-              risk control, customer relevance, and better commercial outcomes.
-            </p>
+//             <p className="mt-5 leading-8 text-blue-100/85">
+//               Whether qualification is evaluated in real time at each request or
+//               assigned for a defined period, our scoring architecture supports
+//               risk control, customer relevance, and better commercial outcomes.
+//             </p>
 
-            <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
-              <p className="text-sm leading-7 text-blue-50/90">
-                This enables Customer Value Management teams to match the right
-                customers with the right product at the right time.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//             <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
+//               <p className="text-sm leading-7 text-blue-50/90">
+//                 This enables Customer Value Management teams to match the right
+//                 customers with the right product at the right time.
+//               </p>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function CertificationsSection() {
   return (
@@ -588,7 +588,7 @@ export default function AboutUsPage() {
       <AboutHero />
       <StorySection />
       <DeliverSection />
-      <ScoringSection />
+      {/* <ScoringSection /> */}
       <CertificationsSection />
       <CTASection />
       <SiteFooter />

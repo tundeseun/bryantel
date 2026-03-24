@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Sparkles,
-  Building2,
   Send,
-  // BarChart3,
-  // Database,
-  // Wallet,
   BellRing,
+  Target,
+  Eye,
 } from "lucide-react";
 
 import SiteHeader from "./SiteHeader";
@@ -20,9 +18,6 @@ import aboutImage from "./assets/about-bryantel.png";
 import certificationImage from "./assets/certification.jpg";
 import gsaSealImage from "./assets/compliance.jpg";
 import gsaLogoImage from "./assets/compliance_2.jpg";
-// import amsImage from "./assets/ams-product.png";
-// import creditplusImage from "./assets/products/credit-plus.png";
-// import bigdataImage from "./assets/products/big-data.png";
 
 type Slide = {
   id: number;
@@ -34,15 +29,6 @@ type Slide = {
   cta1Link: string;
   cta2Link: string;
 };
-
-// type FeaturedProduct = {
-//   title: string;
-//   description: string;
-//   button: string;
-//   href: string;
-//   image: string;
-//   icon: React.ElementType;
-// };
 
 const slides: Slide[] = [
   {
@@ -82,36 +68,6 @@ const slides: Slide[] = [
     cta2Link: "/contact",
   },
 ];
-
-// const featuredProducts: FeaturedProduct[] = [
-//   {
-//     title: "Advanced Monitoring System",
-//     description:
-//       "Real-time analytics and monitoring for gaming regulation, operational visibility, and compliance-driven oversight.",
-//     button: "Explore AMS",
-//     href: "/products",
-//     image: amsImage,
-//     icon: BarChart3,
-//   },
-//   {
-//     title: "Credit+",
-//     description:
-//       "A smart lending solution that enables airtime, data, and service advances with automated recovery and flexible channels.",
-//     button: "Explore Credit+",
-//     href: "/products",
-//     image: creditplusImage,
-//     icon: Wallet,
-//   },
-//   {
-//     title: "Big Data",
-//     description:
-//       "Enterprise-grade intelligence that transforms telecom and operational data into strategic reporting and mobility insights.",
-//     button: "Explore Big Data",
-//     href: "/products",
-//     image: bigdataImage,
-//     icon: Database,
-//   },
-// ];
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -359,75 +315,87 @@ function AboutSection() {
   );
 }
 
-// function FeaturedProductsSection() {
-//   return (
-//     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#081849,#0a1d5c,#07163f)] py-16 text-white lg:py-20">
-//       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
-//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.16),_transparent_35%)]" />
+function VisionMissionSection() {
+  const items = [
+    {
+      title: "Our Vision",
+      text: "To become the leading technology company by providing innovative solutions that drive global business advancement.",
+      icon: <Eye className="h-6 w-6" />,
+      accent:
+        "from-blue-600 via-cyan-500 to-sky-400",
+      bg:
+        "bg-[linear-gradient(135deg,rgba(8,24,73,0.98),rgba(10,29,92,0.94),rgba(37,99,235,0.88))]",
+      textColor: "text-white",
+      bodyColor: "text-blue-100/90",
+      badge: "Vision for Global Impact",
+    },
+    {
+      title: "Our Mission",
+      text: "To provide the best service using the latest technology, delivered by highly skilled and motivated staff, while supplying high-quality products at competitive prices in a trusted and secure manner.",
+      icon: <Target className="h-6 w-6" />,
+      accent:
+        "from-amber-400 via-orange-500 to-rose-500",
+      bg:
+        "bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(255,248,240,0.98),rgba(255,243,230,0.98))]",
+      textColor: "text-slate-900",
+      bodyColor: "text-slate-600",
+      badge: "Mission Through Excellence",
+    },
+  ];
 
-//       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
-//         <SectionIntro
-//           dark
-//           title="Featured Products"
-//           subtitle="Explore a few of our core platforms designed to improve visibility, unlock new revenue opportunities, and support enterprise transformation."
-//         />
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff,#f6f9ff,#ffffff)] py-16 lg:py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.10),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.08),_transparent_24%)]" />
+      <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(37,99,235,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.05)_1px,transparent_1px)] [background-size:92px_92px]" />
 
-//         <motion.div
-//           variants={stagger}
-//           initial="hidden"
-//           whileInView="show"
-//           viewport={{ once: true, amount: 0.18 }}
-//           className="grid gap-8 lg:grid-cols-3"
-//         >
-//           {featuredProducts.map((product) => {
-//             const Icon = product.icon;
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+        <SectionIntro
+          title="Vision & Mission"
+          subtitle="Our purpose is driven by innovation, service excellence, and a commitment to delivering trusted technology solutions that create lasting value."
+        />
 
-//             return (
-//               <motion.div
-//                 key={product.title}
-//                 variants={fadeUp}
-//                 whileHover={{ y: -8 }}
-//                 transition={{ duration: 0.25 }}
-//                 className="group rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.65)] backdrop-blur-sm"
-//               >
-//                 <div className="relative h-52 w-full overflow-hidden rounded-[1.5rem]">
-//                   <img
-//                     src={product.image}
-//                     alt={product.title}
-//                     loading="lazy"
-//                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-//                   />
-//                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,15,40,0.04),rgba(5,15,40,0.58))]" />
-//                 </div>
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.18 }}
+          className="grid gap-8 lg:grid-cols-2"
+        >
+          {items.map((item) => (
+            <motion.div
+              key={item.title}
+              variants={fadeUp}
+              whileHover={{ y: -8 }}
+              className={`group relative overflow-hidden rounded-[2rem] border border-white/40 p-8 shadow-[0_30px_90px_-40px_rgba(15,23,42,0.35)] ${item.bg}`}
+            >
+              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_30%)]" />
 
-//                 <div className="mt-5 flex items-center gap-3">
-//                   <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 p-3 text-white shadow-lg shadow-blue-900/30">
-//                     <Icon className="h-6 w-6" />
-//                   </div>
-//                   <h3 className="text-xl font-bold text-white">
-//                     {product.title}
-//                   </h3>
-//                 </div>
+              <div className="relative">
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur-sm">
+                  <span className={item.textColor}>{item.badge}</span>
+                </div>
 
-//                 <p className="mt-4 text-sm leading-7 text-slate-100/95">
-//                   {product.description}
-//                 </p>
+                <div
+                  className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${item.accent} text-white shadow-lg`}
+                >
+                  {item.icon}
+                </div>
 
-//                 <Link
-//                   to={product.href}
-//                   className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition group-hover:translate-x-1"
-//                 >
-//                   {product.button}
-//                   <ArrowRight className="h-4 w-4" />
-//                 </Link>
-//               </motion.div>
-//             );
-//           })}
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// }
+                <h3 className={`mt-6 text-2xl font-bold ${item.textColor}`}>
+                  {item.title}
+                </h3>
+
+                <p className={`mt-4 text-base leading-8 ${item.bodyColor}`}>
+                  {item.text}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function CertificationsSection() {
   const certifications = [
@@ -543,12 +511,6 @@ function LinkCardsSection() {
       to: "/contact",
       icon: <Send className="h-6 w-6" />,
     },
-    {
-      title: "Industries We Serve",
-      text: "Explore how our platforms support gaming regulation, enterprise operations, telecom ecosystems, and compliance-driven sectors.",
-      to: "/industries",
-      icon: <Building2 className="h-6 w-6" />,
-    },
   ];
 
   return (
@@ -566,7 +528,7 @@ function LinkCardsSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
-          className="grid gap-8 lg:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2"
         >
           {cards.map((card) => (
             <motion.div
@@ -608,7 +570,7 @@ export default function BryantelHomepage() {
       <SiteHeader />
       <HeroSection />
       <AboutSection />
-      {/* <FeaturedProductsSection /> */}
+      <VisionMissionSection />
       <CertificationsSection />
       <LinkCardsSection />
       <SiteFooter />
