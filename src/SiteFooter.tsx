@@ -10,7 +10,7 @@ export default function SiteFooter() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.14),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.08),_transparent_24%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-5 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-[1.1fr_0.7fr_0.8fr_0.95fr] md:items-start">
+        <div className="grid gap-4 md:grid-cols-[1.1fr_0.7fr_1.15fr_0.95fr] md:items-start">
           <div>
             <div className="inline-flex rounded-2xl border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(191,219,254,0.12))] p-[1px] shadow-[0_10px_30px_-18px_rgba(0,0,0,0.5)]">
               <div className="rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(226,232,240,0.88))] px-4 py-3 backdrop-blur-sm">
@@ -36,31 +36,39 @@ export default function SiteFooter() {
               <Link to="/about" className="block transition hover:text-white">
                 About
               </Link>
-              <Link to="/products" className="block transition hover:text-white">
-                Products
-              </Link>
               <Link to="/contact" className="block transition hover:text-white">
                 Contact Us
               </Link>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
-              Products
-            </h4>
-            <div className="mt-2 space-y-1.5 text-xs text-slate-300/85">
-              <Link to="/products" className="block transition hover:text-white">
-                AMS
-              </Link>
-              <Link to="/products" className="block transition hover:text-white">
-                Credit+
-              </Link>
-              <Link to="/products" className="block transition hover:text-white">
-                Monitoring
-              </Link>
-            </div>
-          </div>
+  <div className="text-center">
+  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+    Products
+  </h4>
+
+  <div className="mt-3 flex justify-center gap-12 max-w-md mx-auto text-left text-xs text-slate-300/85">
+    
+    {/* Column 1 */}
+    <div className="space-y-2">
+      <Link to="/products" className="block transition hover:text-white">AMS</Link>
+      <Link to="/products" className="block transition hover:text-white">Messaging</Link>
+      <Link to="/products" className="block transition hover:text-white">EIR</Link>
+      <Link to="/products" className="block transition hover:text-white">VOD</Link>
+      <Link to="/products" className="block transition hover:text-white">Credit+</Link>
+    </div>
+
+    {/* Column 2 */}
+    <div className="space-y-2">
+      <Link to="/products" className="block transition hover:text-white">VAP</Link>
+      <Link to="/products" className="block transition hover:text-white">AI Companion</Link>
+      <Link to="/products" className="block transition hover:text-white">AI Caller ID</Link>
+      <Link to="/products" className="block transition hover:text-white">Big Data</Link>
+      <Link to="/products" className="block transition hover:text-white">MVNO</Link>
+    </div>
+
+  </div>
+</div>
 
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
